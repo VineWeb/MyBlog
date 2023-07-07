@@ -17,6 +17,7 @@ module.exports = {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ITdian/MyBlog' },
     ],
+    lastUpdatedText: '最后更新时间',
     outlineTitle: '本页面',
     docFooter: {
       prev: '上一页',

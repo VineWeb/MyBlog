@@ -22,8 +22,7 @@ jobs:
         with:
           node-version: 18
           cache: npm
-      - run: rm -rf node_modules
-      - run: npm install
+      - run: npm ci
       - name: Build
         run: npm run docs:build
       - uses: actions/configure-pages@v2

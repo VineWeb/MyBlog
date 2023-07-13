@@ -59,6 +59,12 @@ module.exports = {
           { text: 'CSS B', link: '/css/index2' },
         ],
         }
+      ],
+      '/other/': [
+        {
+          text: "掌握常用的 npm 命令：简化你的项目管理",
+          link: '/other/npm的使用'
+        }
       ]
     },
     footer: {

@@ -45,6 +45,10 @@ module.exports = {
         text: "React",
         link: "/react/",
       },
+      {
+        text: "其他",
+        link: "/other/npm的使用",
+      },
     ],
     sidebar: {
       '/css/': [

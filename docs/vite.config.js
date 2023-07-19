@@ -10,7 +10,7 @@ export default defineConfig({
     }
   },
   // 静态资源路径（默认为根目录）
-  base: '/',
+  base: '/Myblog/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),

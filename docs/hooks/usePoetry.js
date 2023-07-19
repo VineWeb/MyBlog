@@ -1,7 +1,7 @@
 import { ref, onMounted, computed } from 'vue';
 export async function fetchData() {
   try {
-    const response = await fetch('../json/poetry.json');
+    const response = await fetch('/json/poetry.json');
     const jsonData = await response.json();
     return jsonData;
   } catch (error) {

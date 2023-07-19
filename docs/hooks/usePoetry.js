@@ -1,7 +1,9 @@
 import { ref, onMounted, computed } from 'vue';
+const { MODE } = import.meta.env
+const baseUrl = MODE === 'development' ? '' : '/MyBlog/'
 export async function fetchData() {
   try {
-    const response = await fetch('/json/poetry.json');
+    const response = await fetch(`${baseUrl}/json/poetry.json`);
     const jsonData = await response.json();
     return jsonData;
   } catch (error) {

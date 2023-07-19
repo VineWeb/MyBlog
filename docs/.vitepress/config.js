@@ -7,8 +7,6 @@ module.exports = {
     outlineTitle: '在此页'
   },
   lang: "zh-CN",
-  host: '0.0.0.0',
-  port: '3002',
   title: '欢迎使用VineCode的文档',
   titleTemplate: '欢迎使用VineCode的文档',
   description: '前端文档，不止前端文档。',
@@ -67,9 +65,19 @@ module.exports = {
         }
       ]
     },
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜索'
+          }
+        }
+      }
+    },
     footer: {
       message: '念念不忘，必有回响',
-      copyright: 'Email: itdian.666@163.com'
+      copyright: 'Email: chenjinbode@yeah.net'
     }
   },
 }

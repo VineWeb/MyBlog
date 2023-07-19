@@ -4,15 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "vitepress dev docs",
+    "start": "vitepress dev docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "serve": "vitepress serve docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3",
     "vitepress": "^1.0.0-beta.5",
     "vue": "^3.3.4"
+  },
+  "dependencies": {
+    "element-plus": "^2.3.8",
+    "nanoid": "^4.0.2",
+    "sass": "^1.63.6",
+    "vitepress-plugin-search": "^1.0.4-alpha.20"
   }
 }

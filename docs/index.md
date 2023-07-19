@@ -1,5 +1,9 @@
 ---
 title: 欢迎来到VineCode的空间
 ---
-### 首页就是在这里
-#### 不止是前端
+<Index/>
+<script setup>
+import Index from '@/pages/Index.vue'
+</script>
+
+

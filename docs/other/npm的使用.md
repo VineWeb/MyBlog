@@ -124,7 +124,7 @@
    这将删除缓存的包和数据，以释放磁盘空间。
 ## 依赖报错，同步`package-lock.json`，等
    > **同步`package-lock.json`，或是报错无法解决，依赖无法更新**
-   
+
    1. 使用 `npm install` 命令可以更新package-lock.json
 
    ```
@@ -178,7 +178,7 @@
    8.  `npm ci`：用于在 CI/CD（持续集成/持续交付）环境中以干净的方式安装项目的依赖项。
          ```shell
          npm ci
-
+       
          // 其他方式
          rm -rf node_modules
          npm install

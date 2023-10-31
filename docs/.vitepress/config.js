@@ -51,7 +51,6 @@ module.exports = {
     sidebar: {
       '/css/': [
         {
-        text: "CSS",
         items: [
           { text: 'CSS A', link: '/css/' },
           { text: 'CSS B', link: '/css/index2' },
@@ -59,10 +58,18 @@ module.exports = {
         }
       ],
       '/other/': [
-        {
-          text: "掌握常用的 npm 命令：简化你的项目管理",
-          link: '/other/npm的使用'
-        }
+       {
+        items: [
+          {
+            text: "掌握常用的 npm 命令：简化你的项目管理",
+            link: '/other/npm的使用'
+          },
+          {
+            text: "Nginx 了解正向代理和反向代理以及配置示例",
+            link: '/other/Nginx的使用'
+          }
+        ]
+       }
       ]
     },
     search: {
@@ -76,8 +83,8 @@ module.exports = {
       }
     },
     footer: {
-      message: '念念不忘，必有回响',
-      copyright: 'Email: chenjinbode@yeah.net'
+      message: '',
+      copyright: 'Email: itdian666@163.com'
     }
   },
 }

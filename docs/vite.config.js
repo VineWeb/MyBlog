@@ -18,7 +18,7 @@ export default defineConfig({
   },
   // 服务器配置
   server: {
-    port: 3000, // 服务器端口号
+    port: 3008, // 服务器端口号
     // open: true, // 启动后是否自动打开浏览器
   },
 

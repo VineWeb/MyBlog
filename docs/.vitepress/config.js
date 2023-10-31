@@ -23,17 +23,8 @@ module.exports = {
     },
     nav: [
       {
-        text: 'Html', 
+        text: 'Html/CSS/JS', 
         link: '/html/' 
-      },
-      {
-        text: "CSS",
-        link: "/css/",
-        activeMatch: '/css/'
-      },
-      {
-        text: "JS",
-        link: "/js/",
       },
       {
         text: "Vue",
@@ -47,13 +38,18 @@ module.exports = {
         text: "其他",
         link: "/other/npm的使用",
       },
+      {
+        text: "墨香系列",
+        link: "/vine/墨香待办",
+      },
     ],
     sidebar: {
-      '/css/': [
+      '/html/': [
         {
+        text: "基础",
         items: [
-          { text: 'CSS A', link: '/css/' },
-          { text: 'CSS B', link: '/css/index2' },
+          { text: 'HTML', link: '/html/index' },
+          { text: 'CSS', link: '/html/css/' },
         ],
         }
       ],
@@ -70,6 +66,15 @@ module.exports = {
           }
         ]
        }
+      ],
+      '/vine/': [
+        {
+          text: "墨香系列",
+          link: '/vine/墨香待办',
+          items: [
+            // { text: '需求文档', link: '/vine/墨香待办' }
+          ],
+        }
       ]
     },
     search: {

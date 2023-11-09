@@ -63,6 +63,10 @@ module.exports = {
           {
             text: "Nginx 了解正向代理和反向代理以及配置示例",
             link: '/other/Nginx的使用'
+          },
+          {
+            text: "Git命令学习.md",
+            link: '/other/git命令学习'
           }
         ]
        }

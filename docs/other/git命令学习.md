@@ -67,3 +67,14 @@ git filter-branch --tree-filter 'rm -f config/index.js' HEAD
 git push origin test --force
 ```
 
+## 添加线上库
+
+```js
+  git init
+  git add .
+  git commit -m "first commit"
+  git branch -M master
+  git remote add origin git@xxx
+  git push -u origin master -f
+```
+

@@ -7,8 +7,8 @@ module.exports = {
     outlineTitle: '在此页'
   },
   lang: "zh-CN",
-  title: '欢迎使用VineCode的文档',
-  titleTemplate: '欢迎使用VineCode的文档',
+  title: '首页-VineCode',
+  titleTemplate: 'VineCode',
   description: '前端文档，不止前端文档。',
   lastUpdated: true,
   themeConfig: {
@@ -23,8 +23,8 @@ module.exports = {
     },
     nav: [
       {
-        text: 'Html/CSS/JS', 
-        link: '/html/' 
+        text: '基础', 
+        link: '/basic/' 
       },
       {
         text: "Vue",
@@ -44,13 +44,15 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/html/': [
+      '/basic/': [
         {
-        text: "基础",
-        items: [
-          { text: 'HTML', link: '/html/index' },
-          { text: 'CSS', link: '/html/css/' },
-        ],
+          text: "基础",
+          link: '/basic/',
+          items: [
+            { text: 'HTML', link: '/basic/html/' },
+            { text: 'CSS', link: '/basic/css/' },
+            { text: 'JAVASCRIPT', link: '/basic/js/' },
+          ],
         }
       ],
       '/other/': [
@@ -65,8 +67,26 @@ module.exports = {
             link: '/other/Nginx的使用'
           },
           {
-            text: "Git命令学习.md",
+            text: "Git命令学习",
             link: '/other/git命令学习'
+          },
+          {
+            text: "HTTP",
+            link: '/other/http/HTTP',
+            items: [
+              {
+                text: "1. HTTP 协议基础",
+                link: '/other/http/HTTP'
+              },
+              {
+                text: "2. HTTP 状态码",
+                link: '/other/http/状态码'
+              },
+              {
+                text: "3. HTTP 请求方法",
+                link: '/other/http/请求方法'
+              },
+            ]
           }
         ]
        }

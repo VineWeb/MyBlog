@@ -1,5 +1,5 @@
 ---
-title: 欢迎来到VineCode的空间
+title: 首页
 ---
 <Index/>
 <script setup>

@@ -35,7 +35,7 @@ module.exports = {
         link: "/react/",
       },
       {
-        text: "其他",
+        text: "前端",
         link: "/other/npm的使用",
       },
       {
@@ -51,7 +51,13 @@ module.exports = {
           items: [
             { text: 'HTML', link: '/basic/html/' },
             { text: 'CSS', link: '/basic/css/' },
-            { text: 'JAVASCRIPT', link: '/basic/js/' },
+            {
+              text: 'JAVASCRIPT',
+              link: '/basic/js/',
+              items: [
+                { text: '数据结构', link: '/basic/js/数据结构' },
+              ]
+            },
           ],
         }
       ],
@@ -105,6 +111,10 @@ module.exports = {
               {
                 text: "8. 跨域资源共享(CORS)",
                 link: '/other/http/跨域资源共享(CORS)'
+              },
+              {
+                text: "9. 面试题",
+                link: '/other/http/interview'
               },
             ]
           }

@@ -86,6 +86,26 @@ module.exports = {
                 text: "3. HTTP 请求方法",
                 link: '/other/http/请求方法'
               },
+              {
+                text: "4. HTTP 请求头和响应头",
+                link: '/other/http/请求头和响应头'
+              },
+              {
+                text: "5. Cookie 和 Session、Localstroge",
+                link: '/other/http/Cookie和Session和Localstroge'
+              },
+              {
+                text: "6. HTTP缓存机制",
+                link: '/other/http/缓存机制'
+              },
+              {
+                text: "7. HTTPS",
+                link: '/other/http/HTTPS'
+              },
+              {
+                text: "8. 跨域资源共享(CORS)",
+                link: '/other/http/跨域资源共享(CORS)'
+              },
             ]
           }
         ]

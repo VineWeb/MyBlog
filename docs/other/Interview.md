@@ -33,8 +33,8 @@
 4. **请求头和响应头：**
    - HTTP 请求和响应中的头部信息有哪些常见字段？请解释其中一些重要的字段的作用。
    - 你在项目中如何利用 HTTP 头部信息来实现某些功能或优化性能？
-5. **Cookie 和 Session：**
-   - 什么是 Cookie 和 Session？它们之间有什么区别？
+5. **Cookie 和 Session：,此外还有localStorage**
+   - 什么是 Cookie 和 Session, localStorage？它们之间有什么区别？
    - 如何通过 HTTP 处理用户身份验证和保持会话状态？
 6. **缓存机制：**
    - 请描述一下 HTTP 缓存机制，有哪些常见的缓存策略？

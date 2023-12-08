@@ -56,6 +56,7 @@ module.exports = {
               link: '/basic/js/',
               items: [
                 { text: '数据结构', link: '/basic/js/数据结构' },
+                { text: '事件', link: '/basic/js/事件' },
               ]
             },
           ],

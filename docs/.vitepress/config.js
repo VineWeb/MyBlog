@@ -116,7 +116,20 @@ module.exports = {
                                 link: '/other/http/interview'
                             },
                         ]
-                    }
+                    },
+                    {
+                        text: "构建工具",
+                        link: '/other/build/',
+                        items: [{
+                                text: "Vite和Webpack",
+                                link: '/other/build/index'
+                            },
+                            {
+                                text: "Vite",
+                                link: '/other/build/vite'
+                            },
+                        ]
+                    },
                 ]
             }],
             '/vine/': [{

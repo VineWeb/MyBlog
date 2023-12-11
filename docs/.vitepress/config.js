@@ -59,8 +59,20 @@ module.exports = {
                             { text: '事件循环', link: '/basic/js/事件循环' },
                             { text: 'Promise', link: '/basic/js/Promise' },
                             { text: '闭包', link: '/basic/js/闭包' },
+                            { text: '性能', link: '/basic/js/性能' },
                         ]
                     },
+                ],
+            }],
+            '/vue/': [{
+                text: "Vue简介",
+                link: '/vue/',
+                items: [
+                    { text: 'Vue 基础', link: '/vue/base' },
+                    { text: 'Vuex', link: '/vue/vuex' },
+                    { text: 'Pinia', link: '/vue/pinia' },
+                    { text: 'Vue 进阶', link: '/vue/advanced' },
+                    { text: 'Vue 面试', link: '/vue/review' },
                 ],
             }],
             '/other/': [{

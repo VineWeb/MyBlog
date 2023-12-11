@@ -75,6 +75,15 @@ module.exports = {
                     { text: 'Vue 面试', link: '/vue/review' },
                 ],
             }],
+            '/react/': [{
+                text: "React简介",
+                link: '/react/',
+                items: [
+                    { text: 'React 基础', link: '/react/base' },
+                    { text: 'React 进阶', link: '/react/advanced' },
+                    { text: 'React 面试', link: '/react/review' },
+                ],
+            }],
             '/other/': [{
                 items: [{
                         text: "掌握常用的 npm 命令：简化你的项目管理",

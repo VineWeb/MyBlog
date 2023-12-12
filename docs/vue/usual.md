@@ -68,7 +68,7 @@ const count = ref(1)
 </script>
 
 ```
-
+> `Index.vue`和`components`文件夹在同一目录下, components内有`mySlots.vue`和`nameSlots.vue`以及`scopeSlots.vue`
 ## 引用插槽
 > `Index.vue`引用代码如下:
 
@@ -112,5 +112,5 @@ import scopeSlots from './components/scopeSlots.vue';
 ## 以下是真实的实现展示:
 <Index />
 <script setup>
-import Index from './Index.vue'
+import Index from './components/slot/Index.vue'
 </script>

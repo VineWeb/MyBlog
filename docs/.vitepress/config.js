@@ -73,7 +73,7 @@ module.exports = {
                     { text: 'Pinia', link: '/vue/pinia' },
                     { text: 'Vue 进阶', link: '/vue/advanced' },
                     { text: 'Vue 面试', link: '/vue/review' },
-                    { text: 'Vue 常见', link: '/vue/usual' },
+                    { text: '实战', link: '/vue/usual' },
                 ],
             }],
             '/react/': [{

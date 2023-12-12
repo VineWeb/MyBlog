@@ -27,10 +27,10 @@
 </template>
 
 <script setup lang="ts">
-import mySlots from './components/mySlots.vue';
-import nameSlots from './components/nameSlots.vue';
+import mySlots from './mySlots.vue';
+import nameSlots from './nameSlots.vue';
 // @ts-ignore
-import scopeSlots from './components/scopeSlots.vue';
+import scopeSlots from './scopeSlots.vue';
 </script>
 
 <style scoped>

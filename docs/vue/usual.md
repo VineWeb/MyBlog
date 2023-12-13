@@ -102,10 +102,10 @@ const count = ref(1)
 </template>
 
 <script setup lang="ts">
-import mySlots from './components/mySlots.vue';
-import nameSlots from './components/nameSlots.vue';
+import mySlots from './components/slot/mySlots.vue';
+import nameSlots from './components/slot/nameSlots.vue';
 // @ts-ignore
-import scopeSlots from './components/scopeSlots.vue';
+import scopeSlots from './components/slot/scopeSlots.vue';
 </script>
 
 ```

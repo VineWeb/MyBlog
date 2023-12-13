@@ -240,11 +240,3 @@ function ThemedComponent() {
 
 这些优化策略可以结合使用，根据具体项目的需求和特点选择合适的优化方案。在进行性能优化时，建议先通过性能分析工具找出瓶颈，然后有针对性地采取优化措施。
 ## 五: 源码阅读
-
-
-
-# Welcome
-
-This is my VitePress documentation.
-
-<@react/index />

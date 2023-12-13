@@ -38,11 +38,22 @@ module.exports = {
                 link: "/other/npm的使用",
             },
             {
+                text: "面试",
+                link: "/interview/",
+            },
+            {
                 text: "墨香系列",
                 link: "/vine/墨香待办",
             },
         ],
         sidebar: {
+            '/interview/': [{
+                text: "面试",
+                link: '/interview/',
+                items: [
+                    { text: 'HTML', link: '/interview/' }
+                ]
+            }],
             '/basic/': [{
                 text: "基础",
                 link: '/basic/',

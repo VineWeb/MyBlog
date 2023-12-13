@@ -14,6 +14,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),
+      '@react': path.resolve(__dirname, './react/components')
     }
   },
   // 服务器配置
@@ -27,5 +28,9 @@ export default defineConfig({
     outDir: 'dist', // 构建输出目录
     assetsDir: 'assets', // 静态资源输出目录
     sourcemap: true, // 是否生成源映射文件
+  },
+  esbuild:  {
+    jsxFactory: 'React.createElement',
+    jsxFragment: 'React.Fragment'
   }
 });

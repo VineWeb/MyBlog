@@ -110,6 +110,16 @@ module.exports = {
                         link: '/other/git命令学习'
                     },
                     {
+                        text: "TypeScript",
+                        link: '/other/ts/',
+                        items: [
+                            {
+                                text: "TypeScript简介",
+                                link: '/other/ts/index'
+                            },
+                        ]
+                    },
+                    {
                         text: "HTTP",
                         link: '/other/http/HTTP',
                         items: [{

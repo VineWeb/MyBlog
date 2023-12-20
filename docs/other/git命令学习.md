@@ -78,3 +78,52 @@ git push origin test --force
   git push -u origin master -f
 ```
 
+## 更换 Git 远程仓库地址
+更换 Git 远程仓库地址可以通过以下步骤完成：
+
+1. **查看当前远程仓库地址：**
+   在项目目录下打开命令行或终端，执行以下命令查看当前的远程仓库地址：
+
+   ```bash
+   git remote -v
+   ```
+
+   这会显示当前仓库的远程地址，包括 fetch 和 push 的地址。
+
+2. **删除原有远程仓库地址（可选）：**
+   如果你想要删除原有的远程地址，可以使用以下命令：
+
+   ```bash
+   git remote remove origin
+   ```
+
+   注意：删除操作是可选的，如果你希望保留原有的远程地址，可以跳过这一步。
+
+3. **添加新的远程仓库地址：**
+   添加新的远程地址，假设新地址是 `https://github.com/yourusername/your-repo.git`，可以使用以下命令：
+
+   ```bash
+   git remote add origin https://github.com/yourusername/your-repo.git
+   ```
+
+   替换上述命令中的 URL 为你的新仓库地址。
+
+4. **验证新的远程地址：**
+   可以再次执行 `git remote -v` 来验证新的远程地址是否添加成功。
+
+   ```bash
+   git remote -v
+   ```
+
+   应该显示新的远程地址。
+
+5. **推送到新的远程仓库：**
+   如果本地有已经提交的代码，你可能需要将其推送到新的远程仓库。可以使用以下命令：
+
+   ```bash
+   git push -u origin master
+   ```
+
+   如果你使用的是不同的分支，替换 `master` 为你的分支名。
+
+通过以上步骤，你就成功更换了 Git 远程仓库地址。确保在执行操作前备份重要数据，并谨慎操作。

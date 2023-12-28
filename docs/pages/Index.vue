@@ -21,9 +21,6 @@
 <script setup lang="tsx">
 import { ref, onMounted } from "vue";
 import { nanoid } from "nanoid";
-import { useRandomItem } from "../hooks/usePoetry.js";
-const { poetryItem } = useRandomItem();
-const formPoetry = ref({});
 const tags = [
   { id: nanoid(), name: "代码", type: "" },
   { id: nanoid(), name: "生活", type: "success" },
@@ -83,7 +80,6 @@ const flashText = () => {
 
 // 在组件挂载后，初始化 formPoetry 的值为随机项的值
 onMounted(() => {
-  formPoetry.value = poetryItem;
   animateText()
 });
 </script>

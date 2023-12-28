@@ -1,35 +1,55 @@
 {
-  "hash": "0d59efda",
-  "browserHash": "7688cb7a",
+  "hash": "efece769",
+  "configHash": "2ce76594",
+  "lockfileHash": "92661ce7",
+  "browserHash": "9ad6d999",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "fc5ed20a",
+      "fileHash": "dc3df682",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "0d55a75b",
+      "fileHash": "19645125",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/integrations/useFocusTrap": {
+      "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
+      "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
+      "fileHash": "20cbefaa",
+      "needsInterop": false
+    },
+    "vitepress > mark.js/src/vanilla.js": {
+      "src": "../../../../node_modules/mark.js/src/vanilla.js",
+      "file": "vitepress___mark__js_src_vanilla__js.js",
+      "fileHash": "4e1ba2c5",
+      "needsInterop": false
+    },
+    "vitepress > minisearch": {
+      "src": "../../../../node_modules/minisearch/dist/es/index.js",
+      "file": "vitepress___minisearch.js",
+      "fileHash": "8e54dee7",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "81f0a344",
+      "fileHash": "05c88191",
       "needsInterop": false
     },
     "element-plus/dist/locale/zh-cn.mjs": {
       "src": "../../../../node_modules/element-plus/dist/locale/zh-cn.mjs",
       "file": "element-plus_dist_locale_zh-cn__mjs.js",
-      "fileHash": "60cd8daa",
+      "fileHash": "3dead5ac",
       "needsInterop": false
     },
     "nanoid": {
       "src": "../../../../node_modules/nanoid/index.browser.js",
       "file": "nanoid.js",
-      "fileHash": "12be986a",
+      "fileHash": "e91bc7ee",
       "needsInterop": false
     }
   },
@@ -37,8 +57,8 @@
     "chunk-IYO332YY": {
       "file": "chunk-IYO332YY.js"
     },
-    "chunk-UXIASGQL": {
-      "file": "chunk-UXIASGQL.js"
+    "chunk-LQ2VYIYD": {
+      "file": "chunk-LQ2VYIYD.js"
     }
   }
 }

@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 export default defineConfig({
-  // 项目根目录（默认为当前工作目录）
+  // 项目根目录（默认为当前工作目录）// vitepress: 1.0.0-beta.5
   root: './docs',
   css: {
     postcss: {

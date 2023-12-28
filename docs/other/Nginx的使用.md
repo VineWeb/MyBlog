@@ -59,7 +59,7 @@ upstream backend-server {
 
 负载均衡语法：
 
-```ng	
+```nginx
 http {
     upstream [你的负载均衡机制名称，随便设置一个就好] {
         server [ip地址]:[端口值];

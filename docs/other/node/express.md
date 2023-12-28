@@ -171,7 +171,7 @@ app.listen(3000, () => {
 
 2. **文件结构组织：** 根据项目的规模和复杂性，可以将控制器组织成一个控制器文件夹，并根据业务领域或功能模块创建不同的文件。
 
-   ```plaintext
+   ```js
    controllers/
      ├── userController.js
      ├── productController.js

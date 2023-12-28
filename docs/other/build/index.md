@@ -340,7 +340,7 @@ module.exports = {
 
 例如，处理一种自定义的配置文件格式：
 
-```plaintext
+```js
 # custom-config.txt
 key1=value1
 key2=value2

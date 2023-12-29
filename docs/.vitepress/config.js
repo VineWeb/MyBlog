@@ -94,6 +94,7 @@ module.exports = {
                     { text: 'React 基础', link: '/react/base' },
                     { text: 'React 进阶', link: '/react/advanced' },
                     { text: 'React 面试', link: '/react/review' },
+                    { text: 'react-router-dom', link: '/react/react_router_dom' },
                 ],
             }],
             '/other/': [{

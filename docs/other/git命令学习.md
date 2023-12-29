@@ -127,3 +127,22 @@ git push origin test --force
    如果你使用的是不同的分支，替换 `master` 为你的分支名。
 
 通过以上步骤，你就成功更换了 Git 远程仓库地址。确保在执行操作前备份重要数据，并谨慎操作。
+
+## Git报错： Failed to connect to github.com port 443 解决方案
+
+> 配置http代理
+>  windows 的 网络和Internet 代理 中的地址 + 端口
+```bash
+git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+```
+> 查看代理命令
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+> 取消代理命令
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```

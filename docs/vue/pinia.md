@@ -206,3 +206,21 @@
 在上述例子中，`useCounterStore` 函数用于获取 Pinia 的 Store 实例，然后在 `setup` 函数中创建了一个响应式变量 `counter`，并监听了 `update:count` 事件来更新 `counter` 变量。最后，定义了组件的 `increment` 方法。
 
 这样，你就能够在 Vue 3 中使用 Pinia 并结合 `setup` 函数进行状态管理。
+
+## 三: 修改数据，三种方式
+1. **第一种：**
+```js
+counterStore.count +=1
+```
+
+2. **第二种：**
+```js
+counterStore.$patch({
+  count: 95
+})
+```
+
+3. **第三种：**
+```js
+counterStore.increment(1);
+```

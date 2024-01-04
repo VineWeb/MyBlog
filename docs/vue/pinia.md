@@ -224,3 +224,17 @@ counterStore.$patch({
 ```js
 counterStore.increment(1);
 ```
+
+## 四: 使用的时候要变成响应式
+
+```ts
+import { useCounterStore } from '@/stores';
+const countStore = useCounterStore()
+
+// 使用响应式数据
+import { storeToRefs } from "pinia";
+const { count } = storeToRefs(countStore)
+
+// 使用方法
+countStore.increment(1)
+```

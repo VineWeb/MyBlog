@@ -98,7 +98,8 @@ module.exports = {
                 ],
             }],
             '/other/': [{
-                items: [{
+                items: [
+                    {
                         text: "掌握常用的 npm 命令：简化你的项目管理",
                         link: '/other/npm的使用'
                     },
@@ -109,6 +110,14 @@ module.exports = {
                     {
                         text: "Git命令学习",
                         link: '/other/git命令学习'
+                    },
+                    {
+                        text: 'husky',
+                        link: '/other/husky'
+                    },
+                    {
+                        text: 'Prettier',
+                        link: '/other/prettier'
                     },
                     {
                         text: "Node",
@@ -192,6 +201,7 @@ module.exports = {
                             },
                         ]
                     },
+                   
                 ]
             }],
             '/vine/': [{

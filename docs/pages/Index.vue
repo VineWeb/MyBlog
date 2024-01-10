@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div class="vc-index">
     <el-tag

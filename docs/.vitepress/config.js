@@ -79,7 +79,11 @@ module.exports = {
                 text: "Vue简介",
                 link: '/vue/',
                 items: [
-                    { text: 'Vue 基础', link: '/vue/base' },
+                    {
+                        text: 'Vue 基础', link: '/vue/base', items: [
+                            { text: 'Transition', link: '/vue/base/transition' },
+                        ]
+                    },
                     { text: 'Vuex', link: '/vue/vuex' },
                     { text: 'Pinia', link: '/vue/pinia' },
                     { text: 'Vue 进阶', link: '/vue/advanced' },

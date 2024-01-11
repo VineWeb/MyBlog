@@ -82,6 +82,7 @@ module.exports = {
                     {
                         text: 'Vue 基础', link: '/vue/base', items: [
                             { text: 'Transition', link: '/vue/base/transition' },
+                            { text: 'Teleport', link: '/vue/base/teleport' },
                         ]
                     },
                     { text: 'Vuex', link: '/vue/vuex' },

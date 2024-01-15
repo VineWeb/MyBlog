@@ -64,7 +64,6 @@ import customSuspense from './customSuspense.vue';
 </template>
 
 <script setup lang="ts">
- // @ts-nocheck
 import { ref } from 'vue'
  const chp = ref('')
   import axios from 'axios'

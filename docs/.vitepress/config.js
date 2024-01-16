@@ -88,6 +88,7 @@ module.exports = {
                     },
                     { text: 'Vuex', link: '/vue/vuex' },
                     { text: 'Pinia', link: '/vue/pinia' },
+                    { text: 'Vue-router', link: '/vue/vue-router' },
                     { text: 'Vue 进阶', link: '/vue/advanced', items: [
                         { text: '菜单权限', link: '/vue/advanced/menu' },
                     ]},

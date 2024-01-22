@@ -59,7 +59,9 @@ module.exports = {
                 link: '/basic/',
                 items: [
                     { text: 'HTML', link: '/basic/html/' },
-                    { text: 'CSS', link: '/basic/css/' },
+                    { text: 'CSS', link: '/basic/css/', items: [
+                        { text: 'Flex', link: '/basic/css/flex' },
+                    ] },
                     {
                         text: 'JAVASCRIPT',
                         link: '/basic/js/',

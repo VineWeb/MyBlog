@@ -2,64 +2,73 @@
   "hash": "d81cfd6d",
   "configHash": "2ce76594",
   "lockfileHash": "2f6d77f4",
-  "browserHash": "fb55cc52",
+  "browserHash": "f9442c8c",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "3936e230",
+      "fileHash": "c90246fc",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "cc4fb66b",
+      "fileHash": "9b15cbb7",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "c4440106",
+      "fileHash": "70006365",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "6017aaec",
+      "fileHash": "25ded5e9",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "ca3bfa81",
+      "fileHash": "4f22a5c8",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "963b5889",
+      "fileHash": "c388b436",
       "needsInterop": false
     },
     "element-plus/dist/locale/zh-cn.mjs": {
       "src": "../../../../node_modules/element-plus/dist/locale/zh-cn.mjs",
       "file": "element-plus_dist_locale_zh-cn__mjs.js",
-      "fileHash": "d5c1da31",
+      "fileHash": "5f1e45e4",
       "needsInterop": false
     },
     "nanoid": {
       "src": "../../../../node_modules/nanoid/index.browser.js",
       "file": "nanoid.js",
-      "fileHash": "0e359739",
+      "fileHash": "1917bbfb",
       "needsInterop": false
     },
     "axios": {
       "src": "../../../../node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "164b3a21",
+      "fileHash": "4c2e56ea",
+      "needsInterop": false
+    },
+    "@element-plus/icons-vue": {
+      "src": "../../../../node_modules/@element-plus/icons-vue/dist/index.js",
+      "file": "@element-plus_icons-vue.js",
+      "fileHash": "8b083481",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-PEZMLLGD": {
+      "file": "chunk-PEZMLLGD.js"
+    },
     "chunk-IYO332YY": {
       "file": "chunk-IYO332YY.js"
     },

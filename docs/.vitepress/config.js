@@ -42,8 +42,8 @@ module.exports = {
                 link: "/interview/",
             },
             {
-                text: "墨香系列",
-                link: "/vine/墨香待办",
+                text: "其他",
+                link: "/other/墨香待办",
             },
         ],
         sidebar: {
@@ -213,16 +213,27 @@ module.exports = {
                 text: "面试",
                 link: '/interview/',
                 items: [
-                    { text: 'HTML', link: '/interview/' }
+                    { text: '常见面试题', link: '/interview/index' },
+                    { text: '学习计划', link: '/interview/前端学习' },
+                    { text: '项目解决方案', link: '/interview/project' },
+                    { text: '面试技巧', link: '/interview/still' },
+                    { text: 'React', link: '/interview/react' },
+                    { text: 'Vue', link: '/interview/vue' },
+                    { text: 'Client', link: '/interview/client' },
+                    { text: 'Server', link: '/interview/server' },
                 ]
             }],
-            '/vine/': [{
-                text: "墨香系列",
-                link: '/vine/墨香待办',
-                items: [
-                    // { text: '需求文档', link: '/vine/墨香待办' }
-                ],
-            }]
+            '/other/': [
+                {
+                    text: "墨香待办需求文档",
+                    link: '/other/墨香待办',
+                    items: [],
+                },
+                {
+                    text: "涨跌幅度",
+                    link: '/other/涨跌幅度',
+                }
+            ]
         },
         search: {
             provider: 'local',

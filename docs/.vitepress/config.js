@@ -35,7 +35,7 @@ module.exports = {
             },
             {
                 text: "前端",
-                link: "/other/npm的使用",
+                link: "/web/npm的使用",
             },
             {
                 text: "面试",
@@ -47,13 +47,7 @@ module.exports = {
             },
         ],
         sidebar: {
-            '/interview/': [{
-                text: "面试",
-                link: '/interview/',
-                items: [
-                    { text: 'HTML', link: '/interview/' }
-                ]
-            }],
+            
             '/basic/': [{
                 text: "基础",
                 link: '/basic/',
@@ -108,111 +102,118 @@ module.exports = {
                     { text: 'react-router-dom', link: '/react/react_router_dom' },
                 ],
             }],
-            '/other/': [{
+            '/web/': [{
                 items: [
                     {
                         text: "掌握常用的 npm 命令：简化你的项目管理",
-                        link: '/other/npm的使用'
+                        link: '/web/npm的使用'
                     },
                     {
                         text: "Nginx 了解正向代理和反向代理以及配置示例",
-                        link: '/other/Nginx的使用'
+                        link: '/web/Nginx的使用'
                     },
                     {
                         text: "Git命令学习",
-                        link: '/other/git命令学习'
+                        link: '/web/git命令学习'
                     },
                     {
                         text: 'husky',
-                        link: '/other/husky'
+                        link: '/web/husky'
                     },
                     {
                         text: 'Prettier',
-                        link: '/other/prettier'
+                        link: '/web/prettier'
                     },
                     {
                         text: "Node",
-                        link: '/other/node/',
+                        link: '/web/node/',
                         items: [
                             {
                                 text: "Node简介",
-                                link: '/other/node/node的介绍'
+                                link: '/web/node/node的介绍'
                             },
                             {
                                 text: "Koa",
-                                link: '/other/node/koa'
+                                link: '/web/node/koa'
                             },
                             {
                                 text: "Express",
-                                link: '/other/node/express'
+                                link: '/web/node/express'
                             },
                         ]
                     },
                     {
                         text: "TypeScript",
-                        link: '/other/ts/',
+                        link: '/web/ts/',
                         items: [
                             {
                                 text: "TypeScript简介",
-                                link: '/other/ts/index'
+                                link: '/web/ts/index'
                             },
                         ]
                     },
                     {
                         text: "HTTP",
-                        link: '/other/http/HTTP',
+                        link: '/web/http/HTTP',
                         items: [{
                                 text: "1. HTTP 协议基础",
-                                link: '/other/http/HTTP'
+                                link: '/web/http/HTTP'
                             },
                             {
                                 text: "2. HTTP 状态码",
-                                link: '/other/http/状态码'
+                                link: '/web/http/状态码'
                             },
                             {
                                 text: "3. HTTP 请求方法",
-                                link: '/other/http/请求方法'
+                                link: '/web/http/请求方法'
                             },
                             {
                                 text: "4. HTTP 请求头和响应头",
-                                link: '/other/http/请求头和响应头'
+                                link: '/web/http/请求头和响应头'
                             },
                             {
                                 text: "5. Cookie 和 Session、Localstroge",
-                                link: '/other/http/Cookie和Session和Localstroge'
+                                link: '/web/http/Cookie和Session和Localstroge'
                             },
                             {
                                 text: "6. HTTP缓存机制",
-                                link: '/other/http/缓存机制'
+                                link: '/web/http/缓存机制'
                             },
                             {
                                 text: "7. HTTPS",
-                                link: '/other/http/HTTPS'
+                                link: '/web/http/HTTPS'
                             },
                             {
                                 text: "8. 跨域资源共享(CORS)",
-                                link: '/other/http/跨域资源共享(CORS)'
+                                link: '/web/http/跨域资源共享(CORS)'
                             },
                             {
                                 text: "9. 面试题",
-                                link: '/other/http/interview'
+                                link: '/web/http/interview'
                             },
                         ]
                     },
                     {
                         text: "构建工具",
-                        link: '/other/build/',
+                        link: '/web/build/',
                         items: [{
                                 text: "Vite和Webpack",
-                                link: '/other/build/index'
+                                link: '/web/build/index'
                             },
                             {
                                 text: "Vite",
-                                link: '/other/build/vite'
+                                link: '/web/build/vite'
                             },
                         ]
                     },
                    
+                ]
+            }],
+            '/interview/': [{
+                text: "面试",
+                link: '/interview/',
+                items: [
+                    { text: 'HTML', link: '/interview/' }
                 ]
             }],
             '/vine/': [{

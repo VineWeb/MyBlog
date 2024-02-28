@@ -71,15 +71,13 @@
 - 当 v-if 和 v-for 同时存在于一个元素上的时候，v-if 会首先被执行。
 - 当它们同时存在于一个节点上时，v-if 比 v-for 的优先级更高。这意味着 v-if 的条件将无法访问到 v-for 作用域内定义的变量别名：
 ```js
- <!--
- 这会抛出一个错误，因为属性 todo 此时
- 没有在该实例上定义
--->
+ // 这会抛出一个错误，因为属性 todo 此时
+ // 没有在该实例上定义
 <li v-for="todo in todos" v-if="!todo.isComplete">
   {{ todo.name }}
 </li>
 ```
-在外新包装一层 <template> 再在其上使用 v-for 可以解决这个问题 (这也更加明显易读)：
+在外新包装一层 `<template>` 再在其上使用 v-for 可以解决这个问题 (这也更加明显易读)：
 ```js
 <template v-for="todo in todos">
   <li v-if="!todo.isComplete">

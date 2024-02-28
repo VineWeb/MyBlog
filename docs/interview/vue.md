@@ -87,3 +87,25 @@
   </li>
 </template>
 ```
+## 9.vue3和vue2的区别
+- 速度更快
+  1. 重写了虚拟Dom实现
+  2. 编译模板的优化
+  3. 更高效的组件初始化
+  4. update性能提高1.3~2倍
+- 体积减少
+  1. tree-shaking 基于ES6模板语法 (import 和 exports) 使用到什么函数就导入什么函数使用
+  2. tree-shaking  打包出来的包体积变小了
+- 更易维护
+  1. compositon Api 可与现有的Options API一起使用
+  2. 灵活的逻辑组合与复用
+- 更接近原生
+  1. 可以自定义渲染 API
+- 更易使用
+  1. 响应式 Api 暴露出来
+- 更多的新特性
+  1. Fragment 组件现在支持有多个根节点
+  2. Teleport 是一种能够将我们的模板移动到 DOM 中 Vue app 之外的其他位置的技术，“传送门”
+  3. Composition API 组合式`api`, 更加容易维护我们的代码, 将相同功能的变量进行一个集中式的管理
+  4. CreteRenderer  自定义渲染器
+  

@@ -31,7 +31,7 @@ const animaetdText = ref("");
 let currentCharIndex = ref(0);
 let index = ref(1);
 let pIndex = ref(0)
-let pList = ref([])
+let pList: any = ref([])
 const textRef = ref(null)
 const animateText = () => {
   if (index.value <= textContent.length) {

@@ -232,6 +232,10 @@ module.exports = {
                 {
                     text: "涨跌幅度",
                     link: '/other/涨跌幅度',
+                },
+                {
+                    text: "广州公积金贷款",
+                    link: '/other/广州公积金贷款',
                 }
             ]
         },

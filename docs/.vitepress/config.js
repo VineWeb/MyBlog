@@ -236,6 +236,10 @@ module.exports = {
                 {
                     text: "广州公积金贷款",
                     link: '/other/广州公积金贷款',
+                },
+                {
+                    text: "个人所得税税率表",
+                    link: '/other/个人所得税税率表',
                 }
             ]
         },

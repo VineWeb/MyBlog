@@ -89,7 +89,10 @@ module.exports = {
                         { text: '菜单权限', link: '/vue/advanced/menu' },
                     ]},
                     { text: 'Vue 面试', link: '/vue/review' },
-                    { text: '实战', link: '/vue/usual' },
+                    { text: '实战', link: '/vue/effect/usual', items: [
+                        { text: 'slot', link: '/vue/effect/usual' },
+                        { text: '数目增加动效', link: '/vue/effect/数目增加动效' },
+                    ] },
                 ],
             }],
             '/react/': [{

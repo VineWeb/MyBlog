@@ -112,5 +112,5 @@ import scopeSlots from './components/slot/scopeSlots.vue';
 ## 以下是真实的实现展示:
 <Index />
 <script setup>
-import Index from './components/slot/index.vue'
+import Index from '../components/slot/index.vue'
 </script>

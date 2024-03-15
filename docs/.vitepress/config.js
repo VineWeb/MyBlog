@@ -224,6 +224,12 @@ module.exports = {
                     { text: 'Vue', link: '/interview/vue' },
                     { text: 'Client', link: '/interview/client' },
                     { text: 'Server', link: '/interview/server' },
+                    { text: '面试题', link: '/interview/examinations/index', 
+                        items: [
+                            { text: 'CSS', link: '/interview/examinations/css' },
+                            { text: 'JavaScript', link: '/interview/examinations/javascript' },
+                        ] 
+                    },
                 ]
             }],
             '/other/': [

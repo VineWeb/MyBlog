@@ -232,6 +232,8 @@ module.exports = {
                                 ]
                             },
                             { text: 'JavaScript', link: '/interview/examinations/javascript' },
+                            { text: 'Vue', link: '/interview/examinations/vue' },
+                            { text: 'React', link: '/interview/examinations/react' },
                         ] 
                     },
                 ]

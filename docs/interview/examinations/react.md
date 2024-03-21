@@ -137,3 +137,95 @@ return (
     <button onClick={this.handleClick}>点击</button>
  )
 ```
+## 4. React事件绑定的方式有哪些？区别在哪里
+> 在react应用中，事件名都是用小驼峰格式编写，例如`onclick`要写成`onClick`，示例
+```
+import React from 'react';
+class testComponent extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  onBtnClick = () =>  {
+    console.log("按钮点击")
+  }
+  render () {
+    return <button onClick={this.onBtnClick}>点我</button>
+  }
+}
+```
+### 4.1 this事件的绑定有如下几种方式
+1. render方法中使用bind
+2. render方法中使用箭头函数
+3. constructor中使用bind
+4. 定义函数阶段使用箭头函数绑定
+   
+**1. render方法中使用bind**
+```
+// 方法1 render方法中使用bind
+import React from 'react';
+class App1 extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  onBtnClick () {
+    console.log('按钮点击')
+  }
+  render () {
+    return <button onClick={this.onBtnClick.bind(this)}>点我</button>
+  }
+}
+```
+**2. render方法中使用箭头函数**
+```
+// 方法2 render方法中使用箭头函数
+import React from 'react';
+class App1 extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  onBtnClick () {
+    console.log('按钮点击')
+  }
+  render () {
+    return <button onClick={e => this.onBtnClick(e)}>点我</button>
+  }
+}
+```
+**3. constructor中使用bind**
+```
+// 方法3 constructor中使用bind
+import React from 'react';
+class App1 extends React.Component {
+  constructor(props) {
+    super(props)
+    this.onBtnClick = this.onBtnClick.bind(this)
+  }
+  onBtnClick () {
+    console.log('按钮点击')
+  }
+  render () {
+    return <button onClick={this.onBtnClick}>点我</button>
+  }
+}
+```
+
+**4. 定义函数阶段使用箭头函数绑定**
+```
+// 方法4 定义函数阶段使用箭头函数绑定
+import React from 'react';
+class App1 extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  onBtnClick = () => {
+    console.log('按钮点击')
+  }
+  render () {
+    return <button onClick={this.onBtnClick}>点我</button>
+  }
+}
+```
+> 小结：方式1，方式2写法简单，方式3的编写比较复杂
+- 性能方法：方式1，方式2在每次组件render的时候都会生成新的方法实例，性能问题欠缺，且该函数作为属性值传给子组件的时候，也会导致额外的渲染。
+- 方式3、方式4只会生成一个方法实例
+- 综上，**方式4**为最优的事件绑定方式

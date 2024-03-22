@@ -31,6 +31,97 @@
 1. props是外部传递给组件的，而state是在组件内被组件自己管理的，一般在constructor中初始化的
 2. props在组件内部是不可更改的，但state在组件内部可以进行修改
 3. state是多变的，可以修改
+### 2.2 React Version <= 17 setState
+1. React组件事件：异步更新 + 合并state
+2. DOM事件：同步更新 + 不合并state
+3. setTimeout：同步更新 + 不合并state
+### 2.7 React Version 18 setState
+1. React组件事件：异步更新 + 合并state
+2. DOM事件： 异步更新 + 合并state
+3. setTimeout：异步更新 + 合并state
+```
+import React, { Component } from 'react';
+class ClassCom extends Component {
+  timer = 0;
+  constructor (props: {} | Readonly<{}>) {
+    super(props)
+    this.state = {
+      count: 0
+    }
+  }
+  // 一. react 18
+  /* 
+   1. react 组件事件: 异步更新 + 合并 state
+  */
+  increment = () => {
+    this.setState({
+      count: this.state.count + 1
+    })
+    this.setState({
+      count: this.state.count + 1
+    })
+    this.setState({
+      count: this.state.count + 1
+    })
+    console.log(this.state.count, 'count')
+  }
+  timerIncrement = () => {
+      /* 
+      3. setTimeout 定时器: 异步更新 + 合并 state
+      */
+    this.timer = setTimeout(() => {
+      this.setState({
+        count: this.state.count + 1
+      })
+      this.setState({
+        count: this.state.count + 1
+      })
+      this.setState({
+        count: this.state.count + 1
+      })
+    })
+    console.log(this.state.count, 'count')
+ 
+  }
+  onBtnClick = () => {
+    this.setState({
+      count: this.state.count + 1
+    })
+    this.setState({
+      count: this.state.count + 1
+    })
+    this.setState({
+      count: this.state.count + 1
+    })
+    console.log(this.state.count, 'count')
+  }
+  componentDidMount() {
+      /* 
+       2 . react 组件事件: 异步更新 + 合并 state
+      */
+    document.getElementById('btn')?.addEventListener('click', this.onBtnClick)
+  }
+
+  // 卸载时候要解绑自定义事件, 定时器等...
+  componentWillUnmount() {
+    document.getElementById('btn')?.removeEventListener('click', this.onBtnClick)
+    clearTimeout(this.timer)
+  }
+  render () {
+    return (
+      <>
+        <p>类组件</p>
+        Count: <span>{this.state.count}</span>
+        <button style={{width: '80px'}} onClick={this.increment}>组件事件点我+1</button>
+        <button style={{width: '80px'}} onClick={this.timerIncrement}>定时器点我+1</button>
+        <button style={{width: '80px'}} id='btn'>DOM事件点我+1</button>
+      </>
+    )
+  }
+}
+
+export default ClassCom;
+```
 ## 3. React中类组件和函数组件的区别
 ### 3.1 类组件
 > 类组件，顾名思义就是通过`ES6`类的编写形式去编写组件，该类必须继承React.Component;
@@ -287,4 +378,6 @@ class UnControlCom extands React.Component {
 | 即时验证                                  |         √          |       ×      |     
 | 有条件禁用提交按钮或者控制个别组件显示隐藏   |         √          |       ×      |     
 | 强制输入格式验证                           |         √          |       ×      |     
-| 动态输入等                                |         √          |       ×      |     
+| 动态输入等                                |         √          |       ×      |  
+
+## 6. state

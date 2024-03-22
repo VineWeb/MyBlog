@@ -229,3 +229,62 @@ class App1 extends React.Component {
 - 性能方法：方式1，方式2在每次组件render的时候都会生成新的方法实例，性能问题欠缺，且该函数作为属性值传给子组件的时候，也会导致额外的渲染。
 - 方式3、方式4只会生成一个方法实例
 - 综上，**方式4**为最优的事件绑定方式
+
+## 5. 受控组件和非受控组件
+### 5.1 受控组件
+> 受控组件，大白话来说，就是受我们控制的组件，组件的状态响应外部数据。
+- 简单的例子就是我们使用`state`定义的数据跟`input`的`value`关联绑定，使用`input`的`onChange`去更改`state`变量
+
+```
+import React from 'react';
+class InputComponent extands React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {username: 'zhangsan'}
+  }
+  onChangeInpVal = (e) => {
+    this.setState({
+      username: e.target.value
+    })
+  }
+  render () {
+    return <input name="name" value={this.state.username} onChange={this.onChangeInpVal}>
+  }
+}
+```
+
+### 5.2 非受控组件
+> 非受控组件，简单来说，就是不受我们控制的组件
+- 一般情况是在初始化接受外部的数据，然后自己在内部管理其状态，当需要的时候，可以用`ref`查询`DOM`并获取值
+```
+import React from 'react';
+class UnControlCom extands React.Component {
+  contructor (props) {
+    super(props)
+    this.state = { username: 'zhangsan' }
+    this.inputRef = React.createRef()
+  }
+  getNewUsername = () => {
+    console.log(this.inpufRef.current.value)
+  }
+  render () {
+    render (
+      <input defaultValue={this.state.username} ref={this.inputRef}>
+      <button onClick={this.getNewUsername}>点击我获取最新值</button>
+    )
+  }
+}
+
+```
+### 5.3 应用场景
+- 基本场景类型都可以使用**受控组件**来实现表单，相对数据比较可控。
+- 通过最后点击取值，提交，验证数值的可以使用非受控组件。
+
+|          场景                            |     受控组件        |   不受控组件  | 
+| ---------------------------------------  | ------------------ | ------------ |
+| 点击按钮取值                              |         √          |       √      |     
+| 点击按钮验证                              |         √          |       √      |     
+| 即时验证                                  |         √          |       ×      |     
+| 有条件禁用提交按钮或者控制个别组件显示隐藏   |         √          |       ×      |     
+| 强制输入格式验证                           |         √          |       ×      |     
+| 动态输入等                                |         √          |       ×      |     

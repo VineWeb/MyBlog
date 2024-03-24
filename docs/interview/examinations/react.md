@@ -380,4 +380,27 @@ class UnControlCom extands React.Component {
 | 强制输入格式验证                           |         √          |       ×      |     
 | 动态输入等                                |         √          |       ×      |  
 
-## 6. state
+## 6. React 生命周期有哪些不同阶段，每个阶段对应的方法是？
+### 6.1. 生命周期（Life Cycle）在 `React`整个组件生命周期包括从创建、初始化数据、编译模板、挂载DOM->渲染、更新 -> 渲染、卸载等一系列过程。
+### 6.2. `react16.4`之后的生命周期，分为以下三个阶段：
+   - 创建阶段
+   - 更新阶段
+   - 卸载阶段
+#### 6.2.1 创建阶段
+- constructor
+- getDerivedStateFromProps
+- render
+- componentDidMount
+**6.2.1.1 constructor**
+实例过程中初始化构造函数，通过方法内部通过super关键字来获取父组件的props，在构造函数内，通常都会初始化`state`状态或者在`this`关键字挂载方法
+**6.2.1.2 getDerivedStateFromProps**
+1. 该方法是一个静态的方法，无法访问到组件的实例，执行时机：组件创建和更新阶段，无论是state变化还是props变化，也会调用。
+2. 在每次`render`方法前调用，第一个参数为即将更新的`props`, 第二个参数为上一个状态的`state`, 可以比较props和state来加一些限制条件，防止无用的state更新。
+3. 该方法需要返回一个新的对象作为新的state或者返回null表示state状态不需要更新。
+**6.2.1.3 render**
+1. 类组件必须实现的方法，用于渲染DOM结构，可以通过this访问组件的state， props属性。
+2. 不在要render里面进行setState，否则会触发死循环导致内存崩溃。
+**6.2.1.4 componentDidMount**
+1. 组件挂载到真实的DOM节点后执行，在`render`方法后执行。
+2. 方法内可以进行一些数据获取，ajax请求，自定义事件监听，定时器的开启等。
+3. 一般搭配`componentWillUnmount`进行自定义事件的卸载，清除定时器等操作。

@@ -391,16 +391,75 @@ class UnControlCom extands React.Component {
 - getDerivedStateFromProps
 - render
 - componentDidMount
+
 **6.2.1.1 constructor**
-实例过程中初始化构造函数，通过方法内部通过super关键字来获取父组件的props，在构造函数内，通常都会初始化`state`状态或者在`this`关键字挂载方法
+> 实例过程中初始化构造函数，通过方法内部通过super关键字来获取父组件的props，在构造函数内，通常都会初始化`state`状态或者在`this`关键字挂载方法
+
 **6.2.1.2 getDerivedStateFromProps**
-1. 该方法是一个静态的方法，无法访问到组件的实例，执行时机：组件创建和更新阶段，无论是state变化还是props变化，也会调用。
-2. 在每次`render`方法前调用，第一个参数为即将更新的`props`, 第二个参数为上一个状态的`state`, 可以比较props和state来加一些限制条件，防止无用的state更新。
-3. 该方法需要返回一个新的对象作为新的state或者返回null表示state状态不需要更新。
+1. 该方法是一个静态的方法，无法访问到组件的实例。
+2. 执行时机：组件创建和更新阶段，无论是state变化还是props变化，也会调用。
+3. 在每次`render`方法前调用，第一个参数为即将更新的`props`, 第二个参数为上一个状态的`state`, 可以比较props和state来加一些限制条件，防止无用的state更新。
+4. 该方法需要返回一个新的对象作为新的state或者返回null表示state状态不需要更新。
+
 **6.2.1.3 render**
 1. 类组件必须实现的方法，用于渲染DOM结构，可以通过this访问组件的state， props属性。
 2. 不在要render里面进行setState，否则会触发死循环导致内存崩溃。
+
 **6.2.1.4 componentDidMount**
 1. 组件挂载到真实的DOM节点后执行，在`render`方法后执行。
 2. 方法内可以进行一些数据获取，ajax请求，自定义事件监听，定时器的开启等。
 3. 一般搭配`componentWillUnmount`进行自定义事件的卸载，清除定时器等操作。
+
+### 6.2.2 更新阶段
+- getDerivedStateFromProps
+- shouldComponentUpdate
+- render
+- getSnapshotBeforeUpdate
+- componentDidUpdate
+
+**6.2.2.1 getDerivedStateFromProps**
+1. 静态方法，无法访问实例。
+2. 执行时机：组件创建和更新阶段，无论是state变化还是props变化，都会调用。
+3. 在每次的rander函数前调用，第一个参数为即将更新的props，第二个参数是上一次的state，可以比较props和state来进行一些特殊处理，防止无用的state更新。
+4. 该方法需要返回新的一个对象作为新的state，或者返回null表示此次的state无需更新。
+
+**6.2.2.2 shouldComponentUpdate**
+1. 用于表明组件本身是基于当前的props和state是否需要重新渲染组件，默认情况返回true。
+2. 执行时机：到新的props或者state时都会调用，通过返回true或者false表示组件更新与否。
+3. 一般情况，不建议在该周期方法中进行深层比较，影响效率。
+4. 同时，禁止调用setState，会导致无限循环调用更新。
+
+**6.2.2.3 render**
+1. 类组件必须实现的方法，用于渲染DOM结构，可以访问组件的`state`和`props`。
+2. 不要在`rander`里面进行`setState`操作，会导致死循环造成内存崩溃。
+
+**6.2.2.4 getSnapshotBeforeUpdate**
+1. 该周期函数，在`render`后执行，执行的时候DOM还未更新，该方法返回一个`Snapshot`值，作为`componentDidUpdate`第三个参数传入。
+```
+getSnapshotBeforeUpdate(prevProps, prevState) {
+  console.log(prevProps, prevState, 'getSnapshotBeforeUpdate')
+  return {name: '附加值'}
+}
+
+componentDidUpdate(prevProps, prevState, snapshot) {
+  console.log(prevProps, prevState, snapshot, 'componentDidUpdate')
+}
+
+```
+2. 该方法可以获取组件更新前的信息，比如组件滚动前的位置，方向等，在组件更新后恢复一些UI视觉上的状态。
+
+**6.2.2.5 componentDidUpdate**
+1. 执行时机：组件更新结束后触发。
+2. 在该方法中，可以根据前后的props和state的变化做对应的操作，比如获取数据，修改DOM样式等。
+
+### 6.2.3 卸载阶段
+1. componentWillUnmount
+- 此方法用于组件卸载前，清理一些注册的自定义事件，取消订阅，还有定时器的清除等等
+
+### 6.3 生命周期如图下所示:
+<imgShow :url="ReactLifeCycle" />
+
+<script setup lang="ts">
+import imgShow from './components/imgShow.vue';
+import ReactLifeCycle from './images/react-lifeCycle.jpg'
+</script>

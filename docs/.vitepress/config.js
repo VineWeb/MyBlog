@@ -220,10 +220,6 @@ module.exports = {
                     { text: '学习计划', link: '/interview/前端学习' },
                     { text: '项目解决方案', link: '/interview/project' },
                     { text: '面试技巧', link: '/interview/still' },
-                    { text: 'React', link: '/interview/react' },
-                    { text: 'Vue', link: '/interview/vue' },
-                    { text: 'Client', link: '/interview/client' },
-                    { text: 'Server', link: '/interview/server' },
                     { text: '面试题', link: '/interview/examinations/index', 
                         items: [
                             {   text: 'CSS', link: '/interview/examinations/css', 
@@ -234,6 +230,8 @@ module.exports = {
                             { text: 'JavaScript', link: '/interview/examinations/javascript' },
                             { text: 'Vue', link: '/interview/examinations/vue' },
                             { text: 'React', link: '/interview/examinations/react' },
+                            { text: 'Client', link: '/interview/client' },
+                            { text: 'Server', link: '/interview/server' },
                         ] 
                     },
                 ]

@@ -328,7 +328,7 @@ class App1 extends React.Component {
 
 ```
 import React from 'react';
-class InputComponent extands React.Component {
+class InputComponent extends React.Component {
   constructor(props) {
     super(props)
     this.state = {username: 'zhangsan'}
@@ -349,7 +349,7 @@ class InputComponent extands React.Component {
 - 一般情况是在初始化接受外部的数据，然后自己在内部管理其状态，当需要的时候，可以用`ref`查询`DOM`并获取值
 ```
 import React from 'react';
-class UnControlCom extands React.Component {
+class UnControlCom extends React.Component {
   contructor (props) {
     super(props)
     this.state = { username: 'zhangsan' }
@@ -459,7 +459,82 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 ### 6.3 生命周期如图下所示:
 <imgShow :url="ReactLifeCycle" />
 
+## 7. React的事件机制
+> React基于浏览器的事件机制自身实现了一套事件机制，包括事件注册、事件的合成、事件冒泡、事件派发等。
+
+1. 合成事件是React模拟原生DOM事件所有能力的一个事件对象，即浏览器原生事件的跨浏览器包装器。
+2. 执行顺序代码如下: 
+```
+// index.scss
+.parent {
+  padding: 20px;
+  height: 100px;
+  background-color: skyblue;
+}
+.children {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: pink;
+}
+```
+EventCom.tsx的代码如下: 
+```
+// EventCom.tsx
+import React from 'react';
+import './index.scss'
+class EventCom extends React.Component {
+  constructor (props: {} | Readonly<{}>) {
+    super(props)
+    this.parentRef = React.createRef()
+    this.childrenRef = React.createRef()
+  }
+  handleParent = () => {
+    console.log('React事件, 父元素的点击')
+  }
+  handleChildren = () => {
+    console.log('React事件, 子元素的点击')
+  }
+  componentDidMount () {
+    this.parentRef.current.addEventListener('click', () => {
+      console.log('dom 元素 父元素的点击')
+    })
+    this.childrenRef.current.addEventListener('click', () => {
+      console.log('dom 元素 子元素的点击')
+    })
+    document.addEventListener('click', () => {
+      console.log('dom 元素的点击')
+    })
+    document.body.addEventListener('click', () => {
+      console.log('dom body 元素的点击')
+    })
+  }
+  render () {
+    return (
+      <div className='parent' ref={this.parentRef} onClick={this.handleParent}>
+        父元素
+        <div className='children' ref={this.childrenRef} onClick={this.handleChildren}>
+          子元素
+          事件的执行顺序
+        </div>
+      </div>
+    )
+  }
+}
+export default EventCom;
+```
+> 当点击**天空蓝**的父元素时候，打印如下
+<imgShow :url="ReactEventParent"/>
+
+> 当点击**粉色**的子元素时候，打印如下
+<imgShow :url="ReactEventChildren"/>
+
+### 小结：
+- React所有事件都挂载在document对象上。
+- 当真实的DOM元素触发事件，会冒泡执行元素一直到根元素，再处理React事件。
+- 优先执行原生事件，然后再处理React事件，最后再执行挂载document的事件
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
 import ReactLifeCycle from './images/react-lifeCycle.jpg'
+import ReactEventParent from './images/react-event-parent.png'
+import ReactEventChildren from './images/react-event-children.png'
 </script>

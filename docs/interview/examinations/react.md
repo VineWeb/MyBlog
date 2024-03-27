@@ -534,7 +534,7 @@ export default EventCom;
 - 优先执行原生事件，然后再处理React事件，最后再执行挂载document的事件
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
-import ReactLifeCycle from './images/react-lifeCycle.jpg'
+import ReactLifeCycle from './images/react-lifecycle.jpg'
 import ReactEventParent from './images/react-event-parent.png'
 import ReactEventChildren from './images/react-event-children.png'
 </script>

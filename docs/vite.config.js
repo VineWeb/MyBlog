@@ -25,6 +25,7 @@ export default defineConfig({
 
   // 构建配置
   build: {
+    minify: 'terser',
     outDir: 'dist', // 构建输出目录
     assetsDir: 'assets', // 静态资源输出目录
     sourcemap: true, // 是否生成源映射文件

@@ -23,7 +23,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-docs/.vitepress/cache/deps/_metadata.json
-docs/.vitepress/cache/*
 docs/.vitepress/dist/*
+docs/.vitepress/cache/*
+docs/.vitepress/cache/deps/_metadata.json
 # docs/other

@@ -532,6 +532,87 @@ export default EventCom;
 - React所有事件都挂载在document对象上。
 - 当真实的DOM元素触发事件，会冒泡执行元素一直到根元素，再处理React事件。
 - 优先执行原生事件，然后再处理React事件，最后再执行挂载document的事件
+
+## 8.React 组件之间的通讯
+> 组件间通信即指组件通过某种方式来传递信息以达到某个目标
+
+### 8.1 组件通信/传递有多少种, 根据传送者和接收可以分为如下
+1. 父组件向子组件传递
+2. 子组件向父组件传递
+3. 兄弟之间的通信
+4. 组件向嵌套组件(后代组件)传递
+5. 非关系组件传递
+
+#### 8.1.1 父组件向子组件通讯
+> 父组件调用子组件的时候，在子组件传递参数，子组件通过`props`属性就能接收到父组件传递过来的参数
+```
+// ParentCom.tsx
+import React from "react";
+function ChildrenCom (props: any) {
+  console.log(props)
+  return (
+    <div>{props.name}</div>
+  )
+}
+function ParentCom () {
+  return (
+    <>
+      <div>父元素</div>
+      <ChildrenCom name="父元素传递过来的值" />
+    </>
+  )
+}
+
+export default ParentCom
+```
+#### 8.1.2 子组件向父组件通讯
+> 子组件往父组件通信：父组件向子组件传递一个函数，然后通过这个函数的回调，拿到子组件传过来的值。
+```
+import React from 'react';
+class ChildrenCom extends React.Component {
+  constructor (props: { getName: () => void }) {
+    super(props)
+  }
+  getName = (name: string) => {
+    console.log(name, 'name')
+    this.props.getName(name)
+  }
+  render () {
+    return (
+      <>
+      <button onClick={() => this.getName('张三')}>点我传值张三</button>
+      <button onClick={() => this.getName('李四')}>点我传值李四</button>
+      </>
+    )
+  }
+}
+class ParentCom extends React.Component{
+  constructor (props: {} | Readonly<{}>) {
+    super(props)
+    this.state = {
+      childName: '父组件默认值'
+    }
+  }
+  getChildName = (name: any) => {
+    console.log(name, 'getChildName')
+    this.setState({
+      childName: name
+    })
+  }
+  render () {
+    return (
+      <>
+      <div>父组件元素</div>
+      <div>子组件传递的元素{this.state.childName}</div>
+      <ChildrenCom getName={this.getChildName} /></>
+    )
+  }
+}
+
+export default ParentCom
+```
+#### 8.1.3 兄弟组件之间的通讯
+> 兄弟组件之间的通讯，则使用过父组件来作为中间层来实现数据的互通，通过父组件来传递
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
 import ReactLifeCycle from './images/react-lifecycle.jpg'

@@ -613,6 +613,69 @@ export default ParentCom
 ```
 #### 8.1.3 兄弟组件之间的通讯
 > 兄弟组件之间的通讯，则使用过父组件来作为中间层来实现数据的互通，通过父组件来传递
+```
+// ParentCom.tsx
+// import './index.scss'
+import React from 'react';
+import { Button } from "antd"
+;
+class BrotherCom1 extends React.Component {
+  constructor (props: { count: number }) {
+    super(props)
+  }
+  render () {
+    return (
+      <>
+        <p className='p'>组件1读取值{this.props.count}</p>
+      </>
+    )
+  }
+}
+class BrotherCom2 extends React.Component {
+  constructor (props: { increment : () => void, count: number }) {
+    super(props)
+  }
+  increment = (number: number) => {
+    this.props.increment(number)
+  }
+  render () {
+    return (
+      <>
+        <Button className='btn' onClick={() => this.increment(1)}>点我+1</Button>
+      </>
+    )
+  }
+}
+class ParentCom extends React.Component{
+  constructor (props: {} | Readonly<{}>) {
+    super(props)
+    this.state = {
+      count: 0
+    }
+  }
+  increment = (number: any) => {
+    console.log(name, 'increment')
+    this.setState({
+      count: this.state.count + number
+    })
+  }
+  render () {
+    return (
+      <>
+        <div>父组件元素</div>
+        <BrotherCom1 count={this.state.count} />
+        <BrotherCom2 increment={this.increment} />
+      </>
+    )
+  }
+}
+
+export default ParentCom
+```
+#### 8.1.4 父组件向后代组件传递
+> 父组件向后代组件传递，通过context提供了组件之间通讯，可以共享数据。
+- 使用`React.createContext`来创建一个`context`
+
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
 import ReactLifeCycle from './images/react-lifecycle.jpg'

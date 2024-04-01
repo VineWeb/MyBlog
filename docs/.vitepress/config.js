@@ -7,13 +7,13 @@ module.exports = {
         outlineTitle: '在此页'
     },
     lang: "zh-CN",
-    title: '首页-VineCode',
-    titleTemplate: 'VineCode',
+    title: '首页-VineWeb',
+    titleTemplate: 'VineWeb',
     description: '前端文档，不止前端文档。',
     lastUpdated: true,
     themeConfig: {
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/ITdian/MyBlog' },
+            { icon: 'github', link: 'https://github.com/VineWeb/MyBlog' },
         ],
         lastUpdatedText: '最后更新时间',
         outlineTitle: '本页面',
@@ -268,7 +268,7 @@ module.exports = {
         },
         footer: {
             message: '',
-            copyright: 'Email: itdian666@163.com'
+            copyright: 'Email: vineweb@163.com'
         }
     },
 }

@@ -675,6 +675,63 @@ export default ParentCom
 #### 8.1.4 父组件向后代组件传递
 > 父组件向后代组件传递，通过context提供了组件之间通讯，可以共享数据。
 - 使用`React.createContext`来创建一个`context`
+```
+// Descendant.tsx 
+import React, { Component } from 'react'
+import { Button } from 'antd';
+const MyContext = React.createContext()
+class Chilren extends Component {
+  render(): React.ReactNode {
+      return (
+        <>
+          <div>子元素组件</div>
+          <MyContext.Consumer>
+            {
+              value => (
+                  <div>祖组件传递过来的参数: {value}</div>
+              )
+            }
+          </MyContext.Consumer>
+        </>
+      )
+  }
+}
+class ParentCom extends Component {
+  render(): React.ReactNode {
+      return (
+        <>
+        <div>父元素组件</div>
+        <Chilren></Chilren>
+        </>
+      )
+  }
+}
+class Descendant extends Component {
+  state = {
+    name: '默认值'
+  }
+  changeName = () => {
+    const name = this.state.name === '张三的菜' ? '李四的茶' : '张三的菜'
+    this.setState({
+      name
+    })
+  }
+  render(): React.ReactNode {
+      return (
+        <MyContext.Provider value={this.state.name}>
+          <ParentCom></ParentCom>
+          <Button className='btn' onClick={this.changeName}>点我更改nane值</Button>
+        </MyContext.Provider>
+      )
+  }
+}
+
+export default Descendant
+```
+#### 8.1.5 如果组件之间关系类型比较复杂的情况，建议将数据进行一个全局数据管理，从而实现通信，例如`redux`,
+
+### 8.2 组件通讯小结:
+> 因为`React`是单向数据流，主要思想是组件不会改变接收的数据，只会监听数据的变化，当数据发生改变的时候它们会使用改变后的新值，而不是去修改已有的值，因此，React通信过程中，数据的存储位置都是在上级的位置当中。
 
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';

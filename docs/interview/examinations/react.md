@@ -728,7 +728,77 @@ class Descendant extends Component {
 
 export default Descendant
 ```
-#### 8.1.5 如果组件之间关系类型比较复杂的情况，建议将数据进行一个全局数据管理，从而实现通信，例如`redux`,
+#### 8.1.5 如果组件之间关系类型比较复杂的情况，建议将数据进行一个全局数据管理，从而实现通信，例如`redux`
+> stores/index.tsx代码如下: 
+```
+import { createStore } from 'redux';
+
+const SET_NAME = 'SET_NAME'
+
+export const setName = (name: string) => ({
+  type: SET_NAME,
+  payload: name
+})
+
+// initial state 
+const initialState = {
+  name: '张三'
+}
+
+// Reducer
+const reducer = (state = initialState, action: { type: string; payload: any}) => {
+  switch (action.type) {
+    case SET_NAME: 
+      return { ...state, name: action.payload  };
+    default: 
+    return state
+  }
+}
+
+export const store = createStore(reducer)
+```
+> redux通讯示例如下: 
+```
+// react-redux  通信
+// import React from 'react'; // react 版本17之后可以省略此句
+import { Button } from 'antd'
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { store, setName } from './stores/index';
+
+function SenderComponent () {
+  const dispatch = useDispatch()
+  const oldName = useSelector((state) => state.name)
+  const changeName = () => {
+    const name = oldName === '张三' ? '李四' : '张三'
+    dispatch(setName(name))
+  }
+  return (
+    <div>
+      <Button onClick={changeName}>点击我改变name值</Button>
+    </div>
+  )
+}
+
+function ReceiverComponent () {
+  const name = useSelector((state) => state.name)
+  return (
+    <div>接收到的值: {name}</div>
+  )
+}
+
+function App () {
+  return (
+    <Provider store={store}>
+        <div>
+          <SenderComponent />
+          <ReceiverComponent />
+        </div>
+    </Provider>
+  )
+}
+
+export default App
+```
 
 ### 8.2 组件通讯小结:
 > 因为`React`是单向数据流，主要思想是组件不会改变接收的数据，只会监听数据的变化，当数据发生改变的时候它们会使用改变后的新值，而不是去修改已有的值，因此，React通信过程中，数据的存储位置都是在上级的位置当中。

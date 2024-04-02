@@ -728,7 +728,7 @@ class Descendant extends Component {
 
 export default Descendant
 ```
-#### 8.1.5 如果组件之间关系类型比较复杂的情况，建议将数据进行一个全局数据管理，从而实现通信，例如`redux`
+#### 8.1.5 如果组件之间关系类型比较复杂的情况，建议将数据进行一个全局数据管理，从而实现通信，例如`redux`+ `react-redux`
 > stores/index.tsx代码如下: 
 ```
 import { createStore } from 'redux';
@@ -795,6 +795,84 @@ function App () {
         </div>
     </Provider>
   )
+}
+
+export default App
+```
+### 8.1.6 @reduxjs/toolkit和react-redux结合使用
+> store.tsx文件如下: 
+```
+// store.tsx
+import { createSlice, configureStore, createAsyncThunk } from '@reduxjs/toolkit';
+
+export const incrementAsync = createAsyncThunk(
+  'counter/increment', 
+  async (params, {dispatch}) => {
+    console.log(params)
+    await new Promise(rosolve => setTimeout(rosolve, 1000))
+    dispatch(increment())
+  }
+)
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0
+  },
+  reducers: {
+    increment: (state) => {
+      state.value += 1
+    },
+    decrement: (state) => {
+      state.value -= 1
+    },
+    incrementByAmount: (state, action) => {
+      state.value += action.payload
+    }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(incrementAsync.fulfilled, (state, action) => {
+      console.log(state, action)
+    });
+  },
+})
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions
+
+// const reducer = counterSlice.reducer
+
+export default configureStore({
+  reducer: {
+    counter: counterSlice.reducer
+  }
+})
+
+```
+
+> index.tsx文件如下: 
+```
+import store, { increment, decrement, incrementByAmount, incrementAsync }from './store';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Button } from 'antd';
+function StoreComponent () {
+  const count = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
+  return (
+    <>
+      <div>{count}</div>
+      <Button className='btn p' onClick={() => dispatch(increment())}> 点我+1 </Button>
+      <Button className='btn p' onClick={() => dispatch(decrement())}> 点我-1 </Button>
+      <Button className='btn p' onClick={() => dispatch(incrementByAmount(10))}> 点我+10 </Button>
+      <Button className='btn p' onClick={() => dispatch(incrementAsync(1))}> 点我过一秒后+1 </Button>
+    </>
+  )
+}
+function App () {
+  return (
+    <Provider store={store}>
+      <StoreComponent></StoreComponent>
+    </Provider>
+  ) 
 }
 
 export default App

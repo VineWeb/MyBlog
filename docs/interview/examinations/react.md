@@ -881,6 +881,99 @@ export default App
 ### 8.2 组件通讯小结:
 > 因为`React`是单向数据流，主要思想是组件不会改变接收的数据，只会监听数据的变化，当数据发生改变的时候它们会使用改变后的新值，而不是去修改已有的值，因此，React通信过程中，数据的存储位置都是在上级的位置当中。
 
+## 9. 说说对React refs 的理解，应用场景是哪些？
+> `Refs`是`React`访问`DOM`节点，或者在render中创建的`React`元素
+本质是`ReactDOM.render()`返回的组件实例，如果是渲染组件则返回的是组件实例，如果渲染`dom`则返回的是具体的`dom`节点。
+### 9.1 创建`ref`的形式有三种
+1. 传入字符串，通过this.refs.传入的字符串，来获取对应的元素
+2. 传入对象，对象是通过React.createRef()方式创建出来，使用时获取到创建的对象中存在的current属性就是对应的元素
+3. 传入函数，该函数会在DOM被挂载时进行回调，这个函数会传入一个元素对象，可以自己保存，使用时，直接拿到之前保存的元素对象即可。
+4. 传入hook，hook是通过useRef()的方式创建，使用时通过生成hook对象的current属性就是对应的元素
+
+#### 9.1.1 传入字符串
+```
+// 1. 字符串
+import React from 'react';
+class MyRef extends React.Component{
+  constructor (props: any) {
+    super(props)
+  }
+  componentDidMount() {
+    console.log(this.refs.myref)
+  }
+  render() {
+      return <>
+        <div ref='myref'>122</div>
+      </>
+  }
+}
+
+export default MyRef
+```
+
+#### 9.1.2 传入对象
+
+```
+// 2. 传入对象
+import React from 'react';
+class MyRef extends React.Component{
+  constructor (props: any) {
+    super(props)
+    this.myRef = React.createRef()
+  }
+  componentDidMount() {
+    console.log(this.myRef.current)
+  }
+  render() {
+      return <>
+        <div ref={this.myRef}>122</div>
+      </>
+  }
+}
+
+export default MyRef
+```
+
+#### 9.1.3 传入函数
+```
+import React from 'react';
+class MyRef extends React.Component{
+  constructor (props: any) {
+    super(props)
+    this.myRef = React.createRef()
+  }
+  componentDidMount() {
+    console.log(this.myRef)
+  }
+  render() {
+      return <>
+        <div ref={(el) => this.myRef = el}>122</div>
+      </>
+  }
+}
+
+export default MyRef
+```
+
+#### 9.1.4 传入hook
+```
+// 通过`useRef` 创建一个ref
+import { useEffect, useRef } from 'react';
+function MyRef () {
+  const myRef = useRef()
+  useEffect(() => {
+    console.log(myRef.current)
+  }, [])
+  return (
+    <>
+      <div ref={myRef}>122</div>
+    </>
+  )
+}
+
+export default MyRef
+```
+
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
 import ReactLifeCycle from './images/react-lifecycle.jpg'

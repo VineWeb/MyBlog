@@ -35,7 +35,7 @@
 1. React组件事件：异步更新 + 合并state
 2. DOM事件：同步更新 + 不合并state
 3. setTimeout：同步更新 + 不合并state
-### 2.7 React Version 18 setState
+### 2.3 React Version 18 setState
 1. React组件事件：异步更新 + 合并state
 2. DOM事件： 异步更新 + 合并state
 3. setTimeout：异步更新 + 合并state
@@ -973,7 +973,57 @@ function MyRef () {
 
 export default MyRef
 ```
+## 10. 说一下Real DOM 和Virtual DOM的区别？各自的优缺点？
+> Real DOM，真实DOM，意思是文档对象模型，是一个结构化文本的对象，在页面渲染出的每一个节点都是真实`DOM`结构，如下
+```
+<div class="box">
+  <p>123</p>
+</div>
+```
+> `Virtual Dom`，本质是以`JavaScript`对象形式存在的对`DOM`的描述，创建虚拟`DOM`目的就是为了更好将虚拟的节点渲染到页面视图中，虚拟`DOM`对象的节点与真实的`DOM`属性一一对应。
+- 在`React`中，jsx是其一大特性，可以让你在js中通过使用xml的方式去直接声明页面的DOM结构。
+```
+// 创建p标签
+const vDom = <p class="node">123</p>
 
+// 寻找id为root的节点
+const root = document.getElementById("root")
+
+// 把创建的p标签添加到root节点上
+
+ReactDOM.render(vDom, root)
+```
+> 上述代码中，ReactDOM.render()用于将你创建好的虚拟DOM节点插入到某个真实节点上，并渲染到页面上
+JSX实际是一种语法糖，在使用过程中会被`babel`进行编译转化成`js`代码，上述`Vdom`转化为如下：
+```
+const vDom = React.createElement(
+  'p',
+  {className: 'node'},
+  '123'
+)
+```
+> 可以看出调用`React.createElement()`方法：
+- 第一个参数是标签名，例如h1、span、p、div
+- 第二个参数是一个对象，里面是一些标签的属性，例如id，class等
+- 第三个参数是节点中的文本
+#### 10.1 也就是说，Virtual DOM（虚拟dom）其实就是一个js对象
+1. 虚拟dom不会进行重排和重绘的操作，而真实DOM会频繁重排和重绘
+2. 虚拟dom的总损耗是“虚拟dom增删改 + 真实dom差异增删改 + 重排与重绘”，真实dom的总损耗是“真实DOM完全增删改 + 排版与重绘”
+
+假设一次操作需要操作10个DOM节点，浏览器就会执行10次流程操作，而通过`Vdom`，同样更新10个DOM节点，虚拟dom不会马上操作dom，而是将10次更新的diff内容保存到本地的一个js对象中，最终将这个js对象一次性更新到dom树上，避免大量的无谓计算。
+
+#### 10.2 真实dom和虚拟dom的优缺点
+**1.真实`dom`优势**
+- 易用
+
+**2.真实`dom`缺点**
+- 效率低下，解析速度慢，内存占用量过高
+- 性能差，频繁操作真实dom，容易导致重绘和重排
+
+**3. 虚拟`dom`优势**
+- 简单方便，如果使用手动操作真实dom完成页面，繁琐且容易出错，在大规模应用下维护起来也很困难。
+- 性能提升，使用Virtual DOM，能够有效避免真实DOM频繁更新，减少多次引起的重绘和回流（重排）
+- 跨平台能力，借助虚拟dom，一套代码多端运行
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
 import ReactLifeCycle from './images/react-lifecycle.jpg'

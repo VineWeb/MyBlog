@@ -1024,6 +1024,12 @@ const vDom = React.createElement(
 - 简单方便，如果使用手动操作真实dom完成页面，繁琐且容易出错，在大规模应用下维护起来也很困难。
 - 性能提升，使用Virtual DOM，能够有效避免真实DOM频繁更新，减少多次引起的重绘和回流（重排）
 - 跨平台能力，借助虚拟dom，一套代码多端运行
+
+**3. 虚拟`dom`缺点**
+- 在一些性能要求极高的应用中无法进行针对性的极致优化
+- 首次渲染大量DOM时候，由于多了一次虚拟DOM的计算，速度比正常稍慢。
+
+
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';
 import ReactLifeCycle from './images/react-lifecycle.jpg'

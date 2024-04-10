@@ -106,6 +106,35 @@ const deepCopyObj = _.cloneDeep(obj);
 
 <ImgShow :url="clonePng" />
 
+## 2. JavaScript 本地存储的方式有哪些？区别和应用场景？
+1. cookie
+2. sessionStorage
+3. localStorage
+4. indexedDB
+  
+### 2.1 cookie
+> 类型为[小型文本文件]，指某些网站为了辨别用户身份而储存在用户本地终端上的数据，是为了解决http无状态导致的问题。
+- 内存不超过4KB的小型文本数据
+- 由名称（name）、值（value）和其他几个用于控制cookie有效期，安全性，使用范围的可选属性组成。
+  1. Expires 用于设置Cookie的过期时间
+  2. Max-Age用于设置在Cookie失效之前需要经过的秒数(优先级比`Expires`高)
+  3. Domain指定了`Cookie`可以送达的主机名
+  4. Path指定了一个URL路径，这个路径必须出现在要请求的资源的路径中才可以发送`Cookie`首部
+  5. 标记为Secure的Cookie只应通过被HTTPS协议加密过的请求发送给服务端
+
+### 2.2 localStorage
+- 大小 5M左右
+- 存储的信息在同一域中是共享的
+- 生命周期：持久化的本地存储，除非主动删除数据，否则数据是永远不会过期
+- 受同源策略的限制
+- 缺点：无法像`Cookie`一样设置过期时间
+- 只能存入字符串，无法直接存对象
+
+### 2.3 sessionStorage
+`sessionStorage`和`localStorage`使用方法基本一致，唯一不同的是生命周期
+
+- 一旦页面（会话）关闭，`sessionStorage`将会删除数据
+
 <script lang="ts" setup>
 import clonePng from './images/clone.png'
 import ImgShow from './components/imgShow.vue'

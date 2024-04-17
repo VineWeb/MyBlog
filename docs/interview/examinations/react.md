@@ -1037,6 +1037,26 @@ const vDom = React.createElement(
 5. 单向数据流：React设计了单向数据流的理念，数据总是从父组件传递到子组件，子组件不能修改父组件的状态通过
 6. 声明式编程: React采用声明式编程
 7. 高效的更新机制: React使用了一系列优化策略（事务批处理，脏位检查等）来减少实际的DOM操作次数，提高更新策略。
+8. Hooks: React16.8引入了Hooks运行在函数组件中使用state和其他react特性
+
+## 12. React的key
+1. Diff算法，元素`key`属性的作用是用于判断元素是新创建的还是被移动的元素，从而减少不必要的元素渲染
+2. key涉及到节点的增和删，发现旧key不存在了，则将其删除，新key在之前没有，则插入，这就增加性能的开销
+3. key应该是唯一的
+4. key不用使用随机值（随机值在下一次render时，会重新生成一个数字）
+5. 使用index作为key值，对性能没有优化
+
+## 13. Diff 算法
+> React引入Virtual DOM的概念，极大地避免无效的DOM操作，使我们的页面的构建效率得到了极大的提升，而diff算法就是更高效地通过对比新旧Virtual DOM来找出真正的Dom变化之处。
+
+- 传统的diff算法通过循环递归进行依次对比，效率低下，算法复杂度达到O(n^3)，react将算法进行一个优化，复杂度降至O(n)
+
+### React diff 原理
+react中diff算法主要遵循三个层级的策略: 
+- tree层级
+- component层级
+- element层级
+
 
 <script setup lang="ts">
 import imgShow from './components/imgShow.vue';

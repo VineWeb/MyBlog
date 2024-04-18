@@ -135,6 +135,17 @@ const deepCopyObj = _.cloneDeep(obj);
 
 - 一旦页面（会话）关闭，`sessionStorage`将会删除数据
 
+### 2.4 关于cookie、sessionStorage、localStorage三者的区别主要如下：
+- 存储大小：`cookie`数据大小不能超过`4k`，`sessionStorage`和`localStorage`虽然也有存储大小的限制，但比`cookie`大的多，可以达到`5M`
+- 有效时间: `localStorage`存储持久数据，浏览器关闭后数据不丢失，除非主动删除数据。`sessionStorage`数据在当前浏览器窗口关闭后自动删除，`cookie`设置的`cookie`过期时间之前一直有效，即使窗口或浏览器关闭
+- 数据和服务器之间的交互方式，`cookie`的数据会自动的传递到服务器，服务器端也可以写`cookie`到客户端；`sessiongStrage`和`localStorage`不会自动把数据发给服务器，仅在本地保存。
+
+### 2.5 应用场景
+- 标记用户与跟踪用户行为的情况，推荐使用`cookie`
+- 适合长期保存在本地的数据(令牌)，推荐使用`localStorage`
+- 敏感账号一次性登录，推荐使用`sessionStorage`
+- 存储大量数据的情况，在线文档（富文本编辑器）保存编辑历史的情况，推荐使用`indexedDB`
+
 <script lang="ts" setup>
 import clonePng from './images/clone.png'
 import ImgShow from './components/imgShow.vue'

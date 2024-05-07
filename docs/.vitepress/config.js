@@ -21,17 +21,14 @@ module.exports = {
             prev: '上一页',
             next: '下一页'
         },
-        nav: [{
+        nav: [
+            {
                 text: '基础',
                 link: '/basic/'
             },
             {
-                text: "Vue",
-                link: "/vue/",
-            },
-            {
-                text: "React",
-                link: "/react/",
+                text: '日志',
+                link: '/logcomposition/arbitrate'
             },
             {
                 text: "前端",
@@ -45,9 +42,12 @@ module.exports = {
                 text: "其他",
                 link: "/other/墨香待办",
             },
+            {
+                text: "技能",
+                link: "/skill/",
+            },
         ],
         sidebar: {
-            
             '/basic/': [{
                 text: "基础",
                 link: '/basic/',
@@ -71,39 +71,13 @@ module.exports = {
                     },
                 ],
             }],
-            '/vue/': [{
-                text: "Vue简介",
-                link: '/vue/',
+            '/logcomposition/': [{
                 items: [
                     {
-                        text: 'Vue 基础', link: '/vue/base', items: [
-                            { text: 'Transition', link: '/vue/base/transition' },
-                            { text: 'Teleport', link: '/vue/base/teleport' },
-                            { text: 'Suspense', link: '/vue/base/suspense' },
-                        ]
+                        text: "工资去哪了？一段苦逼的追薪之旅",
+                        link: '/logcomposition/arbitrate'
                     },
-                    { text: 'Vuex', link: '/vue/vuex' },
-                    { text: 'Pinia', link: '/vue/pinia' },
-                    { text: 'Vue-router', link: '/vue/vue-router' },
-                    { text: 'Vue 进阶', link: '/vue/advanced', items: [
-                        { text: '菜单权限', link: '/vue/advanced/menu' },
-                    ]},
-                    { text: 'Vue 面试', link: '/vue/review' },
-                    { text: '实战', link: '/vue/effect/usual', items: [
-                        { text: 'slot', link: '/vue/effect/usual' },
-                        { text: '数目增加动效', link: '/vue/effect/数目增加动效' },
-                    ] },
-                ],
-            }],
-            '/react/': [{
-                text: "React简介",
-                link: '/react/',
-                items: [
-                    { text: 'React 基础', link: '/react/base' },
-                    { text: 'React 进阶', link: '/react/advanced' },
-                    { text: 'React 面试', link: '/react/review' },
-                    { text: 'react-router-dom', link: '/react/react_router_dom' },
-                ],
+                ]
             }],
             '/web/': [{
                 items: [
@@ -126,6 +100,40 @@ module.exports = {
                     {
                         text: 'Prettier',
                         link: '/web/prettier'
+                    },
+                    {
+                        text: "Vue简介",
+                        link: '/web/vue/',
+                        items: [
+                            {
+                                text: 'Vue 基础', link: '/web/vue/base', items: [
+                                    { text: 'Transition', link: '/web/vue/base/transition' },
+                                    { text: 'Teleport', link: '/web/vue/base/teleport' },
+                                    { text: 'Suspense', link: '/web/vue/base/suspense' },
+                                ]
+                            },
+                            { text: 'Vuex', link: '/web/vue/vuex' },
+                            { text: 'Pinia', link: '/web/vue/pinia' },
+                            { text: 'Vue-router', link: '/web/vue/vue-router' },
+                            { text: 'Vue 进阶', link: '/web/vue/advanced', items: [
+                                { text: '菜单权限', link: '/web/vue/advanced/menu' },
+                            ]},
+                            { text: 'Vue 面试', link: '/web/vue/review' },
+                            { text: '实战', link: '/web/vue/effect/usual', items: [
+                                { text: 'slot', link: '/web/vue/effect/usual' },
+                                { text: '数目增加动效', link: '/web/vue/effect/数目增加动效' },
+                            ] },
+                        ],
+                    },
+                    {
+                        text: "React简介",
+                        link: '/web/react/',
+                        items: [
+                            { text: 'React 基础', link: '/web/react/base' },
+                            { text: 'React 进阶', link: '/web/react/advanced' },
+                            { text: 'React 面试', link: '/web/react/review' },
+                            { text: 'react-router-dom', link: '/web/react/react_router_dom' },
+                        ],
                     },
                     {
                         text: "Node",

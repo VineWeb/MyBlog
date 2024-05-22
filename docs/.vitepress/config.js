@@ -240,6 +240,7 @@ module.exports = {
                             { text: 'React', link: '/interview/examinations/react' },
                             { text: 'Client', link: '/interview/client' },
                             { text: 'Server', link: '/interview/server' },
+                            { text: '基础', link: '/interview/基础' },
                         ] 
                     },
                 ]

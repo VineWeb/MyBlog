@@ -262,6 +262,10 @@ module.exports = {
                 {
                     text: "个人所得税税率表",
                     link: '/other/个人所得税税率表',
+                },
+                {
+                    text: "考勤表下载",
+                    link: '/other/考勤表',
                 }
             ]
         },

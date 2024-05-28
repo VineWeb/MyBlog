@@ -266,6 +266,10 @@ module.exports = {
                 {
                     text: "考勤表下载",
                     link: '/other/考勤表',
+                },
+                {
+                    text: "表单",
+                    link: '/other/表单',
                 }
             ]
         },

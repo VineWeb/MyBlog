@@ -270,6 +270,10 @@ module.exports = {
                 {
                     text: "表单",
                     link: '/other/表单',
+                },
+                {
+                    text: "车贷计算",
+                    link: '/other/车贷',
                 }
             ]
         },

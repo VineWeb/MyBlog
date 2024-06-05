@@ -274,6 +274,10 @@ module.exports = {
                 {
                     text: "车贷计算",
                     link: '/other/车贷',
+                },
+                {
+                    text: "常用药物清单",
+                    link: '/other/常用药物清单',
                 }
             ]
         },

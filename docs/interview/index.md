@@ -21,7 +21,7 @@ function debounce(fn, delay = 400) {
   let timer = null
   return function () {
     if (timer) {
-      clearsetTimeout(timer)
+      clearTimeout(timer)
     }
     timer = setTimeout(() => {
       fn.apply(this, arguments)

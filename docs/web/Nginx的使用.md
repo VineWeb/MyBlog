@@ -169,3 +169,75 @@ server {
 
 ```
 
+## Nginx 命令 (Linux)
+
+```
+1. 查询文件的编码 
+file -bi /etc/nginx/html/index.html
+
+text/html; charset=iso-8859-1
+
+
+2. 重启nginx
+nginx -s reload
+
+3. 检查nginx配置是否正确
+nginx -t
+
+// 正确显示下列信息: 
+# nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+# nginx: configuration file /etc/nginx/nginx.conf test is successful
+3.1. 查看nginx运行情况
+nginx -T
+
+3.2. 查看nginx文件
+cat nginx.conf
+
+3.3 在 vi 或 vim 中：
+vi nginx.conf
+vim nginx.conf
+进入命令模式：按 Esc
+保存并退出：输入 :wq，然后按 Enter
+
+4. 启动nginx
+start nginx
+
+5. 停止nginx
+nginx -s stop
+
+6. 复制文件夹
+cp -r /path/to/source_folder /path/to/destination_folder
+
+// -r 选项表示递归复制，用于复制整个文件夹及其内部的所有文件和子文件夹
+
+7. 移动文件夹
+mv /path/to/source_folder /path/to/destination_folder
+```
+
+## 配置多项目每一个对应的路径对应一个项目
+```
+  server {
+      listen       80;
+      # server_name  localhost xxx.xx.xx.xxx www.xxx.com *.xxx.com;
+      server_name  localhost;
+      default_type  text/html;
+      location / {
+          root  /etc/nginx/html/dist ;
+          try_files $uri $uri/ /index.html;
+      }
+      location /test/ {
+          alias  /etc/nginx/html/test/ ;
+          try_files $uri $uri/ /test/index.html;
+      }
+      location /tubiao {
+          alias  /etc/nginx/html/tubiao ;
+          try_files $uri $uri/ /tubiao/index.html;
+      }
+      location /MyBlog/ {
+          alias  /etc/nginx/html/MyBlog/ ;
+          try_files $uri $uri/ /MyBlog/index.html;
+      }
+  }
+
+```
+

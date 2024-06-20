@@ -39,20 +39,16 @@ const goto = (path: string) => {
 
 const blogList = [
   {
-      text: "工资去哪了？一段苦逼的追薪之旅",
-      link: `${origin}/logcomposition/arbitrate`,
-  },
-  {
       text: "掌握常用的 npm 命令：简化你的项目管理",
-      link: `${origin}/web/npm的使用`
+      link: `${origin}/web/npm的使用.html`
   },
   {
       text: "Nginx 了解正向代理和反向代理以及配置示例",
-      link: `${origin}/web/Nginx的使用`
+      link: `${origin}/web/Nginx的使用.html`
   },
   {
       text: "Git命令学习",
-      link: `${origin}/web/git命令学习`
+      link: `${origin}/web/git命令学习.html`
   },
 ]
 </script>

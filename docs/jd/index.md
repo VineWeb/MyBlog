@@ -26,8 +26,6 @@ WebGL Cesium JavaScript C++ GeoServer QGIS
 5、掌握服务端语言、掌握版本控制、掌握HTTP协议、掌握json交换数据等优先考虑
 
 
-
-
 # 水利局
 职位描述：
 1. 水利水电数字孪生相关的信息化系统研发；

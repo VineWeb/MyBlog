@@ -238,6 +238,7 @@ module.exports = {
                             { text: 'JavaScript', link: '/interview/examinations/javascript' },
                             { text: 'Vue', link: '/interview/examinations/vue' },
                             { text: 'React', link: '/interview/examinations/react' },
+                            { text: 'Mapbox', link: '/interview/examinations/mapbox' },
                             { text: 'Client', link: '/interview/client' },
                             { text: 'Server', link: '/interview/server' },
                             { text: '基础', link: '/interview/基础' },

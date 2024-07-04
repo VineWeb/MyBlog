@@ -241,6 +241,7 @@ module.exports = {
                             { text: 'Mapbox', link: '/interview/examinations/mapbox' },
                             { text: 'Client', link: '/interview/client' },
                             { text: 'Server', link: '/interview/server' },
+                            { text: 'Electron', link: '/interview/examinations/electron' },
                             { text: '基础', link: '/interview/基础' },
                         ] 
                     },

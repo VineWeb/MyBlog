@@ -341,7 +341,7 @@ map.setCenter([lng, lat]);
 map.flyTo({
     center: [8.11862, 46.58842],
     zoom: 12.5,
-    //bearing: 130,
+    // bearing: 130,
     // pitch: 75
     duration: 12000, // Animate over 12 seconds
     essential: true 

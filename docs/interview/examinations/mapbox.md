@@ -347,3 +347,99 @@ map.flyTo({
     essential: true 
 });
 ```
+
+## 15. 清除图层 clearLayers
+```
+map.clearLayers()
+```
+
+## 16. 清除资源 clearSources
+```
+map.clearSources()
+```
+
+## 17.  清除所有图层和资源 clear
+```
+map.clear()
+```
+
+## 18. PoPup 提示框
+```
+const markerHeight = 50;
+const markerRadius = 10;
+const linearOffset = 25;
+const popupOffsets = {
+    'top': [0, 0],
+    'top-left': [0, 0],
+    'top-right': [0, 0],
+    'bottom': [0, -markerHeight],
+    'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+    'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+    'left': [markerRadius, (markerHeight - markerRadius) * -1],
+    'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+};
+const popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
+    .setLngLat(e.lngLat)
+    .setHTML("<h1>Hello World!</h1>")
+    .setMaxWidth("300px")
+    .addTo(map);
+
+// js 移除 提示框
+const removePopup = () => {
+  const zjfLayerPopupDom = document.getElementsByClassName('my-class');
+  if (zjfLayerPopupDom.length > 0) {
+    console.log('组件移除')
+    zjfLayerPopupDom[0].remove();
+  }
+};
+```
+## 19. 获取当前地图的中心点 getCenter
+```
+const center = map.getCenter();
+```
+## 20. 获取当前地图的缩放 getZoom
+```
+const zoom = map.getZoom();
+```
+## 21. 获取当前地图的 bearing
+```
+const bearing = map.getBearing();
+```
+## 22. 获取当前地图的 pitch
+```
+const pitch = map.getPitch();
+```
+
+## 23. Marker
+
+```
+const marker = new mapboxgl.Marker({
+  color: "#FFFFFF",
+  draggable: true
+})  
+  .setLngLat([30.5, 50.5])
+  .addTo(map);
+
+
+// 批量添加marker
+let markers = []
+const el = document.createElement("div");
+el.setAttribute("data-marker", JSON.stringify(marker));
+el.style.width = "50px";
+el.style.height = "50px";
+const marketEl = new mapbox.Marker(el)
+      .setLngLat([lng, lat])
+      .addTo(this.map);
+    markers.push(marketEl);
+// 批量删除markers
+markers.forEach(marker => {
+  marker.remove();
+});
+
+```
+
+
+
+
+
+

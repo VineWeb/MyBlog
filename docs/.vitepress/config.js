@@ -228,6 +228,7 @@ module.exports = {
                     { text: '学习计划', link: '/interview/前端学习' },
                     { text: '项目解决方案', link: '/interview/project' },
                     { text: '面试技巧', link: '/interview/still' },
+                    // { text: '面试准备', link: '/jd/面试准备' },
                     { text: '面试题', link: '/interview/examinations/index', 
                         items: [
                             {   text: 'CSS', link: '/interview/examinations/css', 

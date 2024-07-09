@@ -39,16 +39,20 @@ const goto = (path: string) => {
 
 const blogList = [
   {
+      text: "Mapbox入门",
+      link: `${origin}/interview/examinations/mapbox.html`
+  },
+  {
+      text: "Elecron入门",
+      link: `${origin}/interview/examinations/electron.html`
+  },
+  {
       text: "掌握常用的 npm 命令：简化你的项目管理",
       link: `${origin}/web/npm的使用.html`
   },
   {
       text: "Nginx 了解正向代理和反向代理以及配置示例",
       link: `${origin}/web/Nginx的使用.html`
-  },
-  {
-      text: "Git命令学习",
-      link: `${origin}/web/git命令学习.html`
   },
 ]
 </script>

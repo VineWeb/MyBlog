@@ -82,6 +82,10 @@ module.exports = {
             '/web/': [{
                 items: [
                     {
+                        text: "跨域解决方法",
+                        link: '/web/跨域解决方法'
+                    },
+                    {
                         text: "掌握常用的 npm 命令：简化你的项目管理",
                         link: '/web/npm的使用'
                     },

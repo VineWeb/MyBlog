@@ -73,10 +73,14 @@ module.exports = {
             }],
             '/logcomposition/': [{
                 items: [
-                    {
-                        text: "工资去哪了？一段苦逼的追薪之旅",
-                        link: '/logcomposition/arbitrate'
-                    },
+                    // {
+                    //     text: "工资去哪了？一段苦逼的追薪之旅",
+                    //     link: '/logcomposition/arbitrate'
+                    // },
+                    { 
+                        text: "谷歌浏览器使用Ai功能",
+                        link: '/logcomposition/谷歌浏览器使用Ai功能'
+                    }
                 ]
             }],
             '/web/': [{

@@ -11,7 +11,7 @@
 
 
 
-cesium开发
+# cesium开发
 职位详情
 WebGL Cesium JavaScript C++ GeoServer QGIS
 岗位职责:
@@ -59,9 +59,15 @@ WebGL Cesium JavaScript C++ GeoServer QGIS
 4、熟练掌握Html5、CSS3、ES6+等的使用;
 5、熟悉前端工程化解决方案Yarn、Npm、Webpack、
 Vite等的使用和基本原理，了解Loader/Plugin的原理及实现;
-6、有流行U框架的使用经验，例如Ant
-Design,Element-ui等;
+6、有流行UI框架的使用经验，例如Ant Design, Element-ui等;
 7、有医疗健康、人工智能等行业工作经历优先。
 
 
+# 美的
+1、全日制大专及以上学历，5年以上前端开发经验;
+2、前端基础HTML/CSS/Javascript等技术扎实，熟悉ES6相关特性，了解浏览器兼容性、HTTP协议及网站安全，熟练性能优化、跨终端开发等;
+3、熟练使用主流前端框架(Vue、React)，有vue3实际项目经验，了解MVVM/MVC实现原理;
+4、熟悉前端开发协同及构建工具(git/Webpack/Vite);
+5、具备良好的沟通和团队协作能力;
+6、有责任心和学习精神，对未知技术和领域能快速掌握并实践;
 

@@ -137,6 +137,19 @@
    rm -rf node_modules
    npm install
    ```
+## 使用npm官方提供的命令查看镜像源：
+
+```bash
+npm config get registry
+```
+命令执行后，会输出当前npm使用的镜像源地址: `https://registry.npmjs.org/`
+
+## 切回使用官方镜像源，可以使用以下命令
+
+```bash
+npm config set https://registry.npmjs.org/
+
+```
 
 ## `npm` 常用简写，命令行中快速执行操作
 
